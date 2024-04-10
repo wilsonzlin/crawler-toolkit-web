@@ -1,6 +1,5 @@
 export * from "./cache/main";
 export * from "./fetch/main";
-export * from "./main";
 export * from "./url";
 export * from "./web/calculateIsReaderable";
 export * from "./web/collectRawLdjson";
