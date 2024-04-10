@@ -1,0 +1,18 @@
+{
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript. React is designed to let you seamlessly combine components written by independent people, teams, and organizations.",
+  "fb:app_id": "623268441017527",
+  "og:type": "website",
+  "og:url": "https://react.dev/",
+  "og:title": "React",
+  "og:description": "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript. React is designed to let you seamlessly combine components written by independent people, teams, and organizations.",
+  "og:image": "https://react.dev/images/og-home.png",
+  "twitter:card": "summary_large_image",
+  "twitter:site": "@reactjs",
+  "twitter:creator": "@reactjs",
+  "twitter:title": "React",
+  "twitter:description": "React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript. React is designed to let you seamlessly combine components written by independent people, teams, and organizations.",
+  "twitter:image": "https://react.dev/images/og-home.png",
+  "google-site-verification": "sIlAGs48RulR4DdP95YSWNKZIEtCqQmRjzn-Zq-CcD0",
+  "next-head-count": "34"
+}

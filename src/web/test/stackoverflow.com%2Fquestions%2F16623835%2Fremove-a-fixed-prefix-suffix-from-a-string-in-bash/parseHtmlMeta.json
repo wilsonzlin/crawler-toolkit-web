@@ -1,0 +1,11 @@
+{
+  "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+  "og:type": "website",
+  "og:url": "https://stackoverflow.com/questions/16623835/remove-a-fixed-prefix-suffix-from-a-string-in-bash",
+  "og:site_name": "Stack Overflow",
+  "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+  "twitter:card": "summary",
+  "twitter:domain": "stackoverflow.com",
+  "twitter:title": "Remove a fixed prefix/suffix from a string in Bash",
+  "twitter:description": "I want to remove the prefix/suffix from a string. For example, given:\nstring=&quot;hello-world&quot;\nprefix=&quot;hell&quot;\nsuffix=&quot;ld&quot;\n\nHow do I get the following result?\n&quot;o-wor&quot;"
+}

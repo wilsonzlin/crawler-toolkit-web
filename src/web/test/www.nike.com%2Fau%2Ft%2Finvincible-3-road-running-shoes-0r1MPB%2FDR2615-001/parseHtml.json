@@ -1,0 +1,234 @@
+{
+  "articleStructuredDataCount": 0,
+  "canonicalUrl": "www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+  "htmlLang": "en-au",
+  "imageUrl": "static.nike.com/a/images/t_default/c2099196-c591-4117-b236-55ad460bbcb4/invincible-3-road-running-shoes-0r1MPB.png",
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 1437,
+  "mainArticleVideoCount": 0,
+  "ogLocale": "en-GB_AU",
+  "ogType": "website",
+  "pageCharCount": 7611,
+  "readerable": true,
+  "snippet": "Skip to main contentFind a Store||Join Us| Men's Road Running Shoes$260Highly RatedSelect FitChoose a Style ColourMaximum cushioning provides our most comfortable ride for everyday runs. Experience a breathable Flyknit upper and the robust platform of",
+  "structuredData": {
+    "product": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Nike Invincible 3 Men's Road Running Shoes",
+        "image": "https://static.nike.com/a/images/t_default/c2099196-c591-4117-b236-55ad460bbcb4/invincible-3-road-running-shoes-0r1MPB.png",
+        "description": "Find the Nike Invincible 3 at Nike.com. ",
+        "brand": {
+          "@type": "Thing",
+          "name": "Nike"
+        },
+        "logo": "https://www.nike.com/Nike_Swoosh_Logo_Black_original.jpg",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "260",
+          "highPrice": "260",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock",
+          "offerCount": "8",
+          "offers": [
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes (Extra Wide)",
+                "model": "1013490523",
+                "releaseDate": "2023-09-20T07:00:00.000Z",
+                "color": "Black/Coconut Milk/Bright Crimson/White"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1015133490",
+                "releaseDate": "2024-03-20T08:00:00.000Z",
+                "color": "White/Fire Red/Cement Grey/Black"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1014195218",
+                "releaseDate": "2024-01-15T08:00:00.000Z",
+                "color": "Thunder Blue/Black/White/Light Armoury Blue"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1014166249",
+                "releaseDate": "2024-01-22T08:00:00.000Z",
+                "color": "White/Photon Dust/Fierce Pink/Deep Royal Blue"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1013272097",
+                "releaseDate": "2023-09-20T07:00:00.000Z",
+                "color": "University Red/Blue Joy/Rugged Orange/Midnight Navy"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1003843043",
+                "releaseDate": "2023-02-02T08:00:00.000Z",
+                "color": "Black/Dark Grey/White/White"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1012549802",
+                "releaseDate": "2023-09-28T07:00:00.000Z",
+                "color": "Black/White"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB",
+              "price": 260,
+              "priceCurrency": "AUD",
+              "itemOffered": {
+                "@type": "IndividualProduct",
+                "name": "Nike Invincible 3 Men's Road Running Shoes",
+                "model": "1012549803",
+                "releaseDate": "2023-06-20T07:00:00.000Z",
+                "color": "Black/Racer Blue/High Voltage/White"
+              },
+              "seller": {
+                "@type": "Organization",
+                "name": "Nike"
+              },
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.4",
+          "reviewCount": "449",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": "MatthewH468821266",
+            "datePublished": "2024-03-09T11:27:30-05:00",
+            "name": "Poor Quality",
+            "reviewBody": "Love the looks and comfort but the quality of the pair I received is terrible. Within 6 weeks of light wear the tread on the bottom of the shoe was separating from the sole and the sole itself was also separating from the upper. I contacted Nike about warranty coverage and they refused to help. I didn’t have a receipt as I received them as a Christmas gift and that disqualifies me from receiving warranty coverage. Why Nike needs a receipt to stand behind the products it manufactures is beyond me.",
+            "reviewRating": {
+              "@type": "Rating",
+              "bestRating": 5,
+              "ratingValue": 1,
+              "worstRating": 1
+            }
+          },
+          {
+            "@type": "Review",
+            "author": "BrayanR761677126",
+            "datePublished": "2024-03-09T05:56:58-05:00",
+            "name": "Bad lock down/Heel slippage",
+            "reviewBody": "Good shoe very cushioning, Just disappointed on the heel slippage even with runners knot still can get a good lock down looking forward for better heel support for upcoming version !!",
+            "reviewRating": {
+              "@type": "Rating",
+              "bestRating": 5,
+              "ratingValue": 2,
+              "worstRating": 1
+            }
+          },
+          {
+            "@type": "Review",
+            "author": "JonathanS304450340",
+            "datePublished": "2024-03-08T16:20:26-05:00",
+            "name": "Amazing",
+            "reviewBody": "I’ve been running in Infintity 3’s and 4’s and loved them so didn’t think I needed Invincible’s. 20 seconds into putting them on, I knew why I needed them. Amazing shoes and while I love the Infinity’s and will use on shorter runs, I will definitely be buying more Invincible’s moving forward",
+            "reviewRating": {
+              "@type": "Rating",
+              "bestRating": 5,
+              "ratingValue": 5,
+              "worstRating": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "title": "Nike Invincible 3 Men's Road Running Shoes. Nike AU",
+  "titleCount": 1
+}

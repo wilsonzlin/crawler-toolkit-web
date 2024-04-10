@@ -1,0 +1,15 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization"
+  },
+  {
+    "url": "https://www.microsoft.com",
+    "logo": [
+      null,
+      null
+    ],
+    "@context": "http://schema.org",
+    "@type": "Organization"
+  }
+]

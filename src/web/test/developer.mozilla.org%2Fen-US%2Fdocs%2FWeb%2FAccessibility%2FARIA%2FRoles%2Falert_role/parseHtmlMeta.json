@@ -1,0 +1,26 @@
+{
+  "viewport": "width=device-width,initial-scale=1",
+  "theme-color": "#ffffff",
+  "robots": "index, follow",
+  "description": "The alert role is for important, and usually time-sensitive, information. The alert is a type of status processed as an atomic live region.",
+  "og:url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role",
+  "og:title": "ARIA: alert role - Accessibility | MDN",
+  "og:type": "website",
+  "og:locale": "en_US",
+  "og:description": "The alert role is for important, and usually time-sensitive, information. The alert is a type of status processed as an atomic live region.",
+  "og:image": "https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png",
+  "og:image:type": "image/png",
+  "og:image:height": "1080",
+  "og:image:width": "1920",
+  "og:image:alt": "The MDN Web Docs logo, featuring a blue accent color, displayed on a solid black background.",
+  "og:site_name": "MDN Web Docs",
+  "twitter:card": "summary_large_image",
+  "twitter:creator": "MozDevNet",
+  "position": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "articleStructuredDataCount": 0,
+  "canonicalUrl": "stackoverflow.com/questions/16623835/remove-a-fixed-prefix-suffix-from-a-string-in-bash",
+  "htmlLang": "en",
+  "imageUrl": "cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 9861,
+  "mainArticleVideoCount": 0,
+  "ogType": "website",
+  "pageCharCount": 15265,
+  "readerable": true,
+  "snippet": "Ask Question Asked 10 years, 10 months ago Modified 5 months ago Viewed 743k times 798 I want to remove the prefix/suffix from a string. For example, given: string=\"hello-world\" prefix=\"hell\" suffix=\"ld\" How do I get the following result? \"o-wor\" Shar",
+  "structuredData": {
+    "qapage": [
+      {
+        "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+        "primaryImageOfPage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+        "name": "Remove a fixed prefix/suffix from a string in Bash",
+        "description": "I want to remove the prefix/suffix from a string. For example, given:\nstring=&quot;hello-world&quot;\nprefix=&quot;hell&quot;\nsuffix=&quot;ld&quot;\n\nHow do I get the following result?\n&quot;o-wor&quot;",
+        "mainEntity": {
+          "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+          "name": "Remove a fixed prefix/suffix from a string in Bash",
+          "dateCreated": "2013-05-18T11:37:50",
+          "upvoteCount": "798",
+          "text": "I want to remove the prefix/suffix from a string. For example, given:\n\nstring=\"hello-world\"\nprefix=\"hell\"\nsuffix=\"ld\"\n\nHow do I get the following result?\n\n\"o-wor\"",
+          "url": "/q/16623835",
+          "author": {
+            "name": "Dušan Rychnovský",
+            "@context": "http://schema.org",
+            "@type": "Person"
+          },
+          "commentCount": "1",
+          "answerCount": "9",
+          "acceptedAnswer": {
+            "upvoteCount": "1209",
+            "text": "$ prefix=\"hell\"\n$ suffix=\"ld\"\n$ string=\"hello-world\"\n$ foo=${string#\"$prefix\"}\n$ foo=${foo%\"$suffix\"}\n$ echo \"${foo}\"\no-wor\n\nThis is documented in the Shell Parameter Expansion section of the manual:\n\n${parameter#word}\n\n${parameter##word}\n\nThe word is expanded to produce a pattern and matched according to the rules described below (see Pattern Matching). If the pattern matches the beginning of the expanded value of parameter, then the result of the expansion is the expanded value of parameter with the shortest matching pattern (the # case) or the longest matching pattern (the ## case) deleted. […]\n\n${parameter%word}\n\n${parameter%%word}\n\nThe word is expanded to produce a pattern and matched according to the rules described below (see Pattern Matching). If the pattern matches a trailing portion of the expanded value of parameter, then the result of the expansion is the value of parameter with the shortest matching pattern (the % case) or the longest matching pattern (the %% case) deleted. […]",
+            "dateCreated": "2013-05-18T11:43:59",
+            "url": "/a/16623897",
+            "author": {
+              "name": "Adrian Frühwirth",
+              "@context": "http://schema.org",
+              "@type": "Person"
+            },
+            "commentCount": "8",
+            "@context": "https://schema.org",
+            "@type": "Answer"
+          },
+          "suggestedAnswer": [
+            {
+              "upvoteCount": "160",
+              "text": "Using sed:\n\n$ echo \"$string\" | sed -e \"s/^$prefix//\" -e \"s/$suffix$//\"\no-wor\n\nWithin the sed command, the ^ character matches text beginning with $prefix, and the trailing $ matches text ending with $suffix.\n\nAdrian Frühwirth makes some good points in the comments below, but sed for this purpose can be very useful. The fact that the contents of $prefix and $suffix are interpreted by sed can be either good OR bad- as long as you pay attention, you should be fine. The beauty is, you can do something like this:\n\n$ prefix='^.*ll'\n$ suffix='ld$'\n$ echo \"$string\" | sed -e \"s/^$prefix//\" -e \"s/$suffix$//\"\no-wor\n\nwhich may be what you want, and is both fancier and more powerful than bash variable substitution. If you remember that with great power comes great responsibility (as Spiderman says), you should be fine.\n\nA quick introduction to sed can be found at http://evc-cit.info/cit052/sed_tutorial.html\n\nA note regarding the shell and its use of strings:\n\nFor the particular example given, the following would work as well:\n\n$ echo $string | sed -e s/^$prefix// -e s/$suffix$//\n\n...but only because:\n\necho doesn't care how many strings are in its argument list, and\n\nThere are no spaces in $prefix and $suffix\n\nIt's generally good practice to quote a string on the command line because even if it contains spaces it will be presented to the command as a single argument. We quote $prefix and $suffix for the same reason: each edit command to sed will be passed as one string. We use double quotes because they allow for variable interpolation; had we used single quotes the sed command would have gotten a literal $prefix and $suffix which is certainly not what we wanted.\n\nNotice, too, my use of single quotes when setting the variables prefix and suffix. We certainly don't want anything in the strings to be interpreted, so we single quote them so no interpolation takes place. Again, it may not be necessary in this example but it's a very good habit to get into.",
+              "dateCreated": "2014-05-17T19:38:23",
+              "url": "/a/23715370",
+              "author": {
+                "name": "user2888410",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "3",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "30",
+              "text": "$ string=\"hello-world\"\n$ prefix=\"hell\"\n$ suffix=\"ld\"\n\n$ #remove \"hell\" from \"hello-world\" if \"hell\" is found at the beginning.\n$ prefix_removed_string=${string/#$prefix}\n\n$ #remove \"ld\" from \"o-world\" if \"ld\" is found at the end.\n$ suffix_removed_String=${prefix_removed_string/%$suffix}\n$ echo $suffix_removed_String\no-wor\n\nNotes:\n\n#$prefix : adding # makes sure that substring \"hell\" is removed only if it is found in beginning.\n%$suffix : adding % makes sure that substring \"ld\" is removed only if it is found in end.\n\nWithout these, the substrings \"hell\" and \"ld\" will get removed everywhere, even it is found in the middle.",
+              "dateCreated": "2018-09-08T08:47:13",
+              "url": "/a/52233591",
+              "author": {
+                "name": "Vijayendar Gururaja",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "2",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "25",
+              "text": "Do you know the length of your prefix and suffix? In your case:\n\nresult=$(echo $string | cut -c5- | rev | cut -c3- | rev)\n\nOr more general:\n\nresult=$(echo $string | cut -c$((${#prefix}+1))- | rev | cut -c$((${#suffix}+1))- | rev)\n\nBut the solution from Adrian Frühwirth is way cool! I didn't know about that!",
+              "dateCreated": "2017-01-16T20:09:08",
+              "url": "/a/41684240",
+              "author": {
+                "name": "tommy.carstensen",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "1",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "22",
+              "text": "I use grep for removing prefixes from paths (which aren't handled well by sed):\n\necho \"$input\" | grep -oP \"^$prefix\\K.*\"\n\n\\K removes from the match all the characters before it.",
+              "dateCreated": "2016-09-16T11:28:43",
+              "url": "/a/39530381",
+              "author": {
+                "name": "Vladimir Petrakovich",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "3",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "10",
+              "text": "Small and universal solution:\n\nexpr \"$string\" : \"$prefix\\(.*\\)$suffix\"",
+              "dateCreated": "2017-07-08T23:34:28",
+              "url": "/a/44991679",
+              "author": {
+                "name": "Tosi Do",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "3",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "10",
+              "text": "Using the =~ operator:\n\n$ string=\"hello-world\"\n$ prefix=\"hell\"\n$ suffix=\"ld\"\n$ [[ \"$string\" =~ ^$prefix(.*)$suffix$ ]] && echo \"${BASH_REMATCH[1]}\"\no-wor",
+              "dateCreated": "2018-01-12T05:14:43",
+              "url": "/a/48219957",
+              "author": {
+                "name": "Martin - マーチン",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "8",
+              "text": "NOTE: Not sure if this was possible back in 2013 but it's certainly possible today (10 Oct 2021) so adding another option ...\n\nSince we're dealing with known fixed length strings (prefix and suffix) we can use a bash substring to obtain the desired result with a single operation.\n\nInputs:\n\nstring=\"hello-world\"\nprefix=\"hell\"\nsuffix=\"ld\"\n\nPlan:\n\nbash substring syntax: ${string:<start>:<length>}\n\nskipping over prefix=\"hell\" means our <start> will be 4\n\n<length> will be total length of string (${#string}) minus the lengths of our fixed length strings (4 for hell / 2 for ld)\n\nThis gives us:\n\n$ echo \"${string:4:(${#string}-4-2)}\"\no-wor\n\nNOTE: the parens can be removed and still obtain the same result\n\nIf the values of prefix and suffix are unknown, or could vary, we can still use this same operation but replace 4 and 2 with ${#prefix} and ${#suffix}, respectively:\n\n$ echo \"${string:${#prefix}:${#string}-${#prefix}-${#suffix}}\"\no-wor",
+              "dateCreated": "2021-10-10T13:56:56",
+              "url": "/a/69515804",
+              "author": {
+                "name": "markp-fuso",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "1",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            },
+            {
+              "upvoteCount": "6",
+              "text": "Using @Adrian Frühwirth answer:\n\nfunction strip {\nlocal STRING=${1#$\"$2\"}\necho ${STRING%$\"$2\"}\n}\n\nuse it like this\n\nHELLO=\":hello:\"\nHELLO=$(strip \"$HELLO\" \":\")\necho $HELLO # hello",
+              "dateCreated": "2017-02-08T06:47:59",
+              "url": "/a/42106449",
+              "author": {
+                "name": "math2001",
+                "@context": "http://schema.org",
+                "@type": "Person"
+              },
+              "commentCount": "0",
+              "@context": "https://schema.org",
+              "@type": "Answer"
+            }
+          ],
+          "@context": "https://schema.org",
+          "@type": "Question"
+        },
+        "@context": "https://schema.org",
+        "@type": "QAPage"
+      }
+    ]
+  },
+  "title": "Remove a fixed prefix/suffix from a string in Bash",
+  "titleCount": 1
+}

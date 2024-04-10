@@ -1,0 +1,17 @@
+{
+  "viewport": "width=device-width, initial-scale=1.0, maximum-scale=2.0",
+  "description": "Find the Nike Invincible 3 Men's Road Running Shoes at Nike.com.  Free delivery and returns on select orders.",
+  "keywords": "Nike Invincible 3 Men's Road Running Shoes",
+  "robots": "index, follow",
+  "og:title": "Nike Invincible 3 Men's Road Running Shoes. Nike AU",
+  "og:description": "Find the Nike Invincible 3 Men's Road Running Shoes at Nike.com.  Free delivery and returns on select orders.",
+  "og:type": "website",
+  "og:url": "https://www.nike.com/au/t/invincible-3-road-running-shoes-0r1MPB/DR2615-001",
+  "og:image": "https://static.nike.com/a/images/t_default/c2099196-c591-4117-b236-55ad460bbcb4/invincible-3-road-running-shoes-0r1MPB.png",
+  "og:locale": "en-GB_AU",
+  "og:site_name": "Nike.com",
+  "og:price:currency": "AUD",
+  "og:price:amount": "260",
+  "branch:deeplink:$deeplink_path": "x-callback-url/product-details?style-color=DR2615-001",
+  "next-head-count": "17"
+}

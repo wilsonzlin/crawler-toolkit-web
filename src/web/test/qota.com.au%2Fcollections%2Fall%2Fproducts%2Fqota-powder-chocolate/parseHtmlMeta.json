@@ -1,0 +1,36 @@
+{
+  "viewport": "width=device-width,initial-scale=1",
+  "theme-color": "#263069",
+  "description": "Every Qota shake is a natural and nutritionally balanced total meal replacement. Our delicious chocolate powder is Nutritionist approved with Free Shipping Australia-wide.",
+  "og:site_name": "QOTA",
+  "og:url": "https://qota.com.au/products/qota-powder-chocolate",
+  "og:title": "QOTA POWDER: CHOCOLATE",
+  "og:type": "product",
+  "og:description": "Every Qota shake is a natural and nutritionally balanced total meal replacement. Our delicious chocolate powder is Nutritionist approved with Free Shipping Australia-wide.",
+  "og:price:amount": "55.00",
+  "og:price:currency": "AUD",
+  "og:image": [
+    "http://qota.com.au/cdn/shop/files/QOTA_LARGE_POUCH-CHOC-SIDE_1024x1024.jpg?v=1684452910",
+    "http://qota.com.au/cdn/shop/products/QOTA_LARGE_POUCH-CHOC-gallery-1_1024x1024.jpg?v=1684452910",
+    "http://qota.com.au/cdn/shop/products/QOTA_LARGE_POUCH-CHOC-LABEL-WEB_1024x1024.jpg?v=1684452910"
+  ],
+  "og:image:secure_url": [
+    "https://qota.com.au/cdn/shop/files/QOTA_LARGE_POUCH-CHOC-SIDE_1024x1024.jpg?v=1684452910",
+    "https://qota.com.au/cdn/shop/products/QOTA_LARGE_POUCH-CHOC-gallery-1_1024x1024.jpg?v=1684452910",
+    "https://qota.com.au/cdn/shop/products/QOTA_LARGE_POUCH-CHOC-LABEL-WEB_1024x1024.jpg?v=1684452910"
+  ],
+  "twitter:site": "@meetyourqota",
+  "twitter:card": "summary_large_image",
+  "twitter:title": "QOTA POWDER: CHOCOLATE",
+  "twitter:description": "Every Qota shake is a natural and nutritionally balanced total meal replacement. Our delicious chocolate powder is Nutritionist approved with Free Shipping Australia-wide.",
+  "google-site-verification": [
+    "zCpJhkcV5tpqcIQTnYi_wpfMXeLYWIesGQjBLfvRF7k",
+    "zCpJhkcV5tpqcIQTnYi_wpfMXeLYWIesGQjBLfvRF7k"
+  ],
+  "facebook-domain-verification": [
+    "kz08gxu90jos6fwmxobcxdoinqcxx2",
+    "hccvbntfp13ncg8rpc7dvag8es0f5p"
+  ],
+  "shopify-digital-wallet": "/19593109/digital_wallets/dialog",
+  "shopify-checkout-api-token": "eb54150b8ccec13492aa4cb56a4d5b14"
+}

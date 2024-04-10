@@ -1,0 +1,511 @@
+Stack Overflow
+
+Remove a fixed prefix/suffix from a string in Bash
+
+Ask Question
+
+Asked
+10 years, 10 months ago
+
+Modified
+5 months ago
+
+Viewed
+743k times
+
+798
+
+I want to remove the prefix/suffix from a string. For example, given:
+
+string="hello-world"
+prefix="hell"
+suffix="ld"
+
+How do I get the following result?
+
+"o-wor"
+
+Share
+
+Improve this question
+
+edited Feb 8, 2023 at 5:47
+
+Mateen Ulhaq
+
+25.8k20 gold badges111 silver badges143 bronze badges
+
+asked May 18, 2013 at 11:37
+
+Dušan RychnovskýDušan Rychnovský
+
+12.1k8 gold badges42 silver badges66 bronze badges
+
+1
+
+26
+
+Be very wary when linking to the so-called Advanced Bash Scripting Guide; it contains a mixture of good advice and terrible.
+
+– tripleee
+
+Oct 19, 2016 at 3:38
+
+ | 
+
+9 Answers
+9
+
+Reset to default
+
+1209
+
+$ prefix="hell"
+$ suffix="ld"
+$ string="hello-world"
+$ foo=${string#"$prefix"}
+$ foo=${foo%"$suffix"}
+$ echo "${foo}"
+o-wor
+
+This is documented in the Shell Parameter Expansion section of the manual:
+
+${parameter#word}
+
+${parameter##word}
+
+The word is expanded to produce a pattern and matched according to the rules described below (see Pattern Matching). If the pattern matches the beginning of the expanded value of parameter, then the result of the expansion is the expanded value of parameter with the shortest matching pattern (the # case) or the longest matching pattern (the ## case) deleted. […]
+
+${parameter%word}
+
+${parameter%%word}
+
+The word is expanded to produce a pattern and matched according to the rules described below (see Pattern Matching). If the pattern matches a trailing portion of the expanded value of parameter, then the result of the expansion is the value of parameter with the shortest matching pattern (the % case) or the longest matching pattern (the %% case) deleted. […]
+
+Share
+
+Improve this answer
+
+edited Mar 14, 2022 at 18:25
+
+cosbor11
+
+15.3k10 gold badges55 silver badges73 bronze badges
+
+answered May 18, 2013 at 11:43
+
+Adrian FrühwirthAdrian Frühwirth
+
+44.1k10 gold badges61 silver badges71 bronze badges
+
+8
+
+46
+
+Is there a way to combine the two in one line? I tried ${${string#prefix}%suffix} but it doesn't work.
+
+– static_rtti
+
+Mar 5, 2014 at 8:18
+
+36
+
+@static_rtti No, unfortunately you cannot nest parameter substitution like this. I know, it's a shame.
+
+– Adrian Frühwirth
+
+Mar 5, 2014 at 8:34
+
+143
+
+@AdrianFrühwirth : the whole language is a shame, but it's so useful :)
+
+– static_rtti
+
+Mar 5, 2014 at 9:24
+
+3
+
+@static_rtti , there is a workaround: echo basename ${string/hell} ld (where the grey part is between backticks)
+
+– ROMANIA_engineer
+
+Dec 27, 2015 at 16:54
+
+2
+
+@ccpizza Parameter substitution does not know such modifiers but if it's a fixed string you could always do e.g. ${foo#[Bb][Aa][Rr]}. Not pretty but still possibly better than an unnecessary subshell/fork, depending on the situation.
+
+– Adrian Frühwirth
+
+Jul 25, 2016 at 18:22
+
+ | 
+
+160
+
+Using sed:
+
+$ echo "$string" | sed -e "s/^$prefix//" -e "s/$suffix$//"
+o-wor
+
+Within the sed command, the ^ character matches text beginning with $prefix, and the trailing $ matches text ending with $suffix.
+
+Adrian Frühwirth makes some good points in the comments below, but sed for this purpose can be very useful. The fact that the contents of $prefix and $suffix are interpreted by sed can be either good OR bad- as long as you pay attention, you should be fine. The beauty is, you can do something like this:
+
+$ prefix='^.*ll'
+$ suffix='ld$'
+$ echo "$string" | sed -e "s/^$prefix//" -e "s/$suffix$//"
+o-wor
+
+which may be what you want, and is both fancier and more powerful than bash variable substitution. If you remember that with great power comes great responsibility (as Spiderman says), you should be fine.
+
+A quick introduction to sed can be found at http://evc-cit.info/cit052/sed_tutorial.html
+
+A note regarding the shell and its use of strings:
+
+For the particular example given, the following would work as well:
+
+$ echo $string | sed -e s/^$prefix// -e s/$suffix$//
+
+...but only because:
+
+echo doesn't care how many strings are in its argument list, and
+
+There are no spaces in $prefix and $suffix
+
+It's generally good practice to quote a string on the command line because even if it contains spaces it will be presented to the command as a single argument. We quote $prefix and $suffix for the same reason: each edit command to sed will be passed as one string. We use double quotes because they allow for variable interpolation; had we used single quotes the sed command would have gotten a literal $prefix and $suffix which is certainly not what we wanted.
+
+Notice, too, my use of single quotes when setting the variables prefix and suffix. We certainly don't want anything in the strings to be interpreted, so we single quote them so no interpolation takes place. Again, it may not be necessary in this example but it's a very good habit to get into.
+
+Share
+
+Improve this answer
+
+edited Aug 9, 2016 at 17:01
+
+Mike S
+
+1,25414 silver badges21 bronze badges
+
+answered May 17, 2014 at 19:38
+
+user2888410user2888410
+
+3
+
+11
+
+Unfortunately, this is bad advice for several reasons: 1) Unquoted, $string is subject to word splitting and globbing. 2) $prefix and $suffix can contain expressions that sed will interpret, e.g. regular expressions or the character used as delimiter which will break the whole command. 3) Calling sed two times is not necessary (you can -e 's///' -e '///' instead) and the pipe could also be avoided. For example, consider string='./ *' and/or prefix='./' and see it break horribly due to 1) and 2).
+
+– Adrian Frühwirth
+
+May 19, 2014 at 6:59
+
+Fun note: sed can take almost anything as a delimiter. In my case, since I was parsing prefix-directories out of paths, I couldn't use /, so I used sed "s#^$prefix##, instead. (Fragility: filenames can't contain #. Since I control the files, we're safe, there.)
+
+– Olie
+
+Oct 21, 2014 at 21:24
+
+3
+
+@Olie: As I understood your original comment, you were saying that the limitation of your choice to use # as sed's delimiter meant that you couldn't handle files containing that character.
+
+– P Daddy
+
+Mar 4, 2015 at 17:03
+
+ | 
+
+30
+
+$ string="hello-world"
+$ prefix="hell"
+$ suffix="ld"
+
+$ #remove "hell" from "hello-world" if "hell" is found at the beginning.
+$ prefix_removed_string=${string/#$prefix}
+
+$ #remove "ld" from "o-world" if "ld" is found at the end.
+$ suffix_removed_String=${prefix_removed_string/%$suffix}
+$ echo $suffix_removed_String
+o-wor
+
+Notes:
+
+#$prefix : adding # makes sure that substring "hell" is removed only if it is found in beginning.
+%$suffix : adding % makes sure that substring "ld" is removed only if it is found in end.
+
+Without these, the substrings "hell" and "ld" will get removed everywhere, even it is found in the middle.
+
+Share
+
+Improve this answer
+
+edited Sep 8, 2018 at 10:13
+
+answered Sep 8, 2018 at 8:47
+
+Vijayendar GururajaVijayendar Gururaja
+
+7921 gold badge9 silver badges16 bronze badges
+
+2
+
+1
+
+Thanks for the Notes! qq: in your code example you also have a forward slash / right after the string, what is that for?
+
+– DiegoSalazar
+
+May 15, 2019 at 15:29
+
+1
+
+/ separates the current string and the sub string. sub-string here is the suffix in th posted question.
+
+– Vijayendar Gururaja
+
+May 16, 2019 at 5:48
+
+ | 
+
+25
+
+Do you know the length of your prefix and suffix? In your case:
+
+result=$(echo $string | cut -c5- | rev | cut -c3- | rev)
+
+Or more general:
+
+result=$(echo $string | cut -c$((${#prefix}+1))- | rev | cut -c$((${#suffix}+1))- | rev)
+
+But the solution from Adrian Frühwirth is way cool! I didn't know about that!
+
+Share
+
+Improve this answer
+
+edited Jan 14, 2018 at 2:39
+
+answered Jan 16, 2017 at 20:09
+
+tommy.carstensentommy.carstensen
+
+9,28215 gold badges67 silver badges110 bronze badges
+
+1
+
+1
+
+This does not "remove the prefix/suffix", but does instead remove as many characters, which only matters if it's not certain that the string actually starts/ends with the pre-/suffix but is an important caveat about this solution to keep in mind.
+
+– cafce25
+
+Oct 6, 2023 at 12:50
+
+ | 
+
+22
+
+I use grep for removing prefixes from paths (which aren't handled well by sed):
+
+echo "$input" | grep -oP "^$prefix\K.*"
+
+\K removes from the match all the characters before it.
+
+Share
+
+Improve this answer
+
+edited Oct 16, 2016 at 9:45
+
+dipdapdop
+
+1261 silver badge10 bronze badges
+
+answered Sep 16, 2016 at 11:28
+
+Vladimir PetrakovichVladimir Petrakovich
+
+4,2241 gold badge30 silver badges46 bronze badges
+
+3
+
+2
+
+grep -P is a nonstandard extension. More power to you if it's supported on your platform, but this is dubious advice if your code needs to be reasonably portable.
+
+– tripleee
+
+May 28, 2019 at 10:32
+
+@tripleee Indeed. But I think a system with GNU Bash installed also have a grep that supports PCRE.
+
+– Vladimir Petrakovich
+
+May 29, 2019 at 8:49
+
+3
+
+No, MacOS for example has Bash out of the box but not GNU grep. Earlier versions actually had the -P option from BSD grep but they removed it.
+
+– tripleee
+
+May 29, 2019 at 8:56
+
+ | 
+
+10
+
+Small and universal solution:
+
+expr "$string" : "$prefix\(.*\)$suffix"
+
+Share
+
+Improve this answer
+
+answered Jul 8, 2017 at 23:34
+
+Tosi DoTosi Do
+
+1131 silver badge4 bronze badges
+
+3
+
+1
+
+If you are using Bash, you should probably not be using expr at all. It was a sort of convenient kitchen sink utility back in the days of the original Bourne shell, but is now way past its best-before date.
+
+– tripleee
+
+May 28, 2019 at 10:34
+
+1
+
+Uh, why? expr is old, but never changes, and will probably always be available. As long as you invoke an external binary (as opposed to using BASH expressions), grep, sed or expr are pretty much equivalent (perl / awk would be costlier).
+
+– usretc
+
+Mar 8, 2021 at 6:36
+
+Fantastic, this is simplest, I've ever seen.
+
+– OfusJK
+
+Jun 8, 2023 at 7:28
+
+ | 
+
+10
+
+Using the =~ operator:
+
+$ string="hello-world"
+$ prefix="hell"
+$ suffix="ld"
+$ [[ "$string" =~ ^$prefix(.*)$suffix$ ]] && echo "${BASH_REMATCH[1]}"
+o-wor
+
+Share
+
+Improve this answer
+
+edited Oct 19, 2018 at 18:08
+
+answered Jan 12, 2018 at 5:14
+
+Martin - マーチンMartin - マーチン
+
+2415 silver badges11 bronze badges
+
+ | 
+
+8
+
+NOTE: Not sure if this was possible back in 2013 but it's certainly possible today (10 Oct 2021) so adding another option ...
+
+Since we're dealing with known fixed length strings (prefix and suffix) we can use a bash substring to obtain the desired result with a single operation.
+
+Inputs:
+
+string="hello-world"
+prefix="hell"
+suffix="ld"
+
+Plan:
+
+bash substring syntax: ${string:<start>:<length>}
+
+skipping over prefix="hell" means our <start> will be 4
+
+<length> will be total length of string (${#string}) minus the lengths of our fixed length strings (4 for hell / 2 for ld)
+
+This gives us:
+
+$ echo "${string:4:(${#string}-4-2)}"
+o-wor
+
+NOTE: the parens can be removed and still obtain the same result
+
+If the values of prefix and suffix are unknown, or could vary, we can still use this same operation but replace 4 and 2 with ${#prefix} and ${#suffix}, respectively:
+
+$ echo "${string:${#prefix}:${#string}-${#prefix}-${#suffix}}"
+o-wor
+
+Share
+
+Improve this answer
+
+answered Oct 10, 2021 at 13:56
+
+markp-fusomarkp-fuso
+
+34.8k5 gold badges20 silver badges40 bronze badges
+
+1
+
+1
+
+Great option! Worth calling out: a key difference between this solution and the others is that if the source string does not start with prefix or end with suffix, then other solutions will not clip anything, where this solution will clip the length of the suffix away. This is not necessarily a problem, just a limitation to be aware of. If you're not sure if the string starts or ends with the prefix/suffix, simply wrap this statement in the appropriate if-statement to check before trimming.
+
+– Stobor
+
+Mar 8, 2022 at 23:18
+
+ | 
+
+6
+
+Using @Adrian Frühwirth answer:
+
+function strip {
+local STRING=${1#$"$2"}
+echo ${STRING%$"$2"}
+}
+
+use it like this
+
+HELLO=":hello:"
+HELLO=$(strip "$HELLO" ":")
+echo $HELLO # hello
+
+Share
+
+Improve this answer
+
+answered Feb 8, 2017 at 6:47
+
+math2001math2001
+
+4,26725 silver badges35 bronze badges
+
+0
+
+ | 
+
+Not the answer you're looking for? Browse other questions tagged or ask your own question.
+
+lang-bash

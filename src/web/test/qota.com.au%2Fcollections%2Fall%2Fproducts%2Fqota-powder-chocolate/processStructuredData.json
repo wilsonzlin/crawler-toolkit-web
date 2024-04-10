@@ -1,0 +1,30 @@
+{
+  "organization": [
+    {
+      "url": "/",
+      "logo": "//qota.com.au/cdn/shop/files/qota_logo_small.svg?v=1698123674",
+      "@context": "http://schema.org",
+      "@type": "Organization"
+    }
+  ],
+  "product": [
+    {
+      "name": [
+        "QOTA POWDER: CHOCOLATE",
+        "QOTA POWDER: CHOCOLATE"
+      ],
+      "url": "https://qota.com.au/products/qota-powder-chocolate",
+      "image": "//qota.com.au/cdn/shop/files/QOTA_LARGE_POUCH-CHOC-SIDE_800x.jpg?v=1684452910",
+      "offers": {
+        "priceCurrency": "AUD",
+        "availability": "http://schema.org/InStock",
+        "price": "$55.00",
+        "@context": "http://schema.org",
+        "@type": "Offer"
+      },
+      "description": "Better nutrition through innovation.\n\nOur best-selling powder for a reason! Our nutritionally complete chocolate powder provides a filling, convenient and nutritionally balanced meal designed to deliver sustained energy. \n\nEach meal delivers\n\n2060 kJ (492 calories)\n\nWe include 30G PROTEIN in every shake because protein improves both satiety and the building of lean muscle.\n\nWe've maximised nutrition by packing 26 ESSENTIAL VITAMINS + MINERALS into every shake. Here’s what’s included in every QOTA meal: Vitamin A, Vitamin B6, Vitamin B12, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin, Riboflavin, Niacin, Folate, Biotin, Pantothenic Acid, Calcium, Chromium, Copper, Iodine, Iron, Magnesium, Manganese, Molybdenum, Phosphorus, Potassium, Selenium, Sodium, Zinc. Phew!\n\nAlso contains ESSENTIAL FATS (omegas 3 + 6).\n\nLOW SUGAR - everything you need and nothing you don't.\n\nWhat you'll receive: \n\nLarge pouch of choc powder = 14 meals\n\nShipping: Qualifies for FREE SHIPPING. Orders placed by 10am weekdays normally despatch that same day.\n\nIngredients: CHOCOLATE POWDER CONTAINS OAT, GLUTEN, MILK AND SOY. MADE IN A FACILITY THAT ALSO PROCESSES EGGS.\nChocolate Powder Full Ingredients\nVisit the Help Centre\n\nNew Formulations Information\n\nSampler sizes available here",
+      "@context": "http://schema.org",
+      "@type": "Product"
+    }
+  ]
+}

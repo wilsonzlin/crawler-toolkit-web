@@ -1,0 +1,122 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "description": "“They know they can’t control the online world,” one expert on the royal family said about the recent spate of revelations about the health of Catherine and King Charles III.",
+    "image": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "url": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-videoSixteenByNineJumbo1600.jpg",
+        "height": 901,
+        "width": 1600,
+        "contentUrl": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-videoSixteenByNineJumbo1600.jpg",
+        "caption": "British newspapers for sale featuring Catherine, Princess of Wales, in London on Saturday.",
+        "creditText": "Tolga Akmen/EPA, via Shutterstock"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "url": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-googleFourByThree.jpg",
+        "height": 600,
+        "width": 800,
+        "contentUrl": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-googleFourByThree.jpg",
+        "caption": "British newspapers for sale featuring Catherine, Princess of Wales, in London on Saturday.",
+        "creditText": "Tolga Akmen/EPA, via Shutterstock"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "url": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-mediumSquareAt3X.jpg",
+        "height": 1801,
+        "width": 1800,
+        "contentUrl": "https://static01.nyt.com/images/2024/03/23/multimedia/23uk-royals-01-b-lhtp/23uk-royals-01-b-lhtp-mediumSquareAt3X.jpg",
+        "caption": "British newspapers for sale featuring Catherine, Princess of Wales, in London on Saturday.",
+        "creditText": "Tolga Akmen/EPA, via Shutterstock"
+      }
+    ],
+    "mainEntityOfPage": "https://www.nytimes.com/2024/03/23/world/europe/princess-kate-middleton-cancer.html",
+    "url": "https://www.nytimes.com/2024/03/23/world/europe/princess-kate-middleton-cancer.html",
+    "inLanguage": "en",
+    "author": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "url": "https://www.nytimes.com/by/mark-landler",
+        "name": "Mark Landler"
+      }
+    ],
+    "dateModified": "2024-03-23T16:53:06.000Z",
+    "datePublished": "2024-03-23T14:58:28.000Z",
+    "headline": "Princess Kate’s Cancer Disclosure Shows Her Lessons From Previous Media Ordeals",
+    "alternativeHeadline": "Catherine’s Cancer Disclosure Shows Her Lessons From Previous Media Ordeals",
+    "publisher": {
+      "@id": "https://www.nytimes.com/#publisher",
+      "name": "The New York Times"
+    },
+    "hasPart": {
+      "@type": "WebPageElement",
+      "isAccessibleForFree": false,
+      "cssSelector": ".meteredContent"
+    },
+    "copyrightHolder": {
+      "@id": "https://www.nytimes.com/#publisher",
+      "name": "The New York Times"
+    },
+    "sourceOrganization": {
+      "@id": "https://www.nytimes.com/#publisher",
+      "name": "The New York Times"
+    },
+    "copyrightYear": 2024,
+    "isAccessibleForFree": false,
+    "isPartOf": {
+      "@type": [
+        "CreativeWork",
+        "Product"
+      ],
+      "name": "The New York Times",
+      "productID": "nytimes.com:basic"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "The New York Times",
+    "logo": {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "url": "https://static01.nyt.com/images/icons/t_logo_291_black.png",
+      "height": 291,
+      "width": 291,
+      "contentUrl": "https://static01.nyt.com/images/icons/t_logo_291_black.png",
+      "creditText": "The New York Times"
+    },
+    "url": "https://www.nytimes.com/",
+    "@id": "https://www.nytimes.com/#publisher",
+    "diversityPolicy": "https://www.nytco.com/company/diversity-and-inclusion/",
+    "ethicsPolicy": "https://www.nytco.com/company/standards-ethics/",
+    "masthead": "https://www.nytimes.com/interactive/2023/01/28/admin/the-new-york-times-masthead.html",
+    "foundingDate": "1851-09-18",
+    "sameAs": "https://en.wikipedia.org/wiki/The_New_York_Times"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ListItem",
+        "name": "World",
+        "position": 1,
+        "item": "https://www.nytimes.com/section/world"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ListItem",
+        "name": "Europe",
+        "position": 2,
+        "item": "https://www.nytimes.com/section/world/europe"
+      }
+    ]
+  }
+]

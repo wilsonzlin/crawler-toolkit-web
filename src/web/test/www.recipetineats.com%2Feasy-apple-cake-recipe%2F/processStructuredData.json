@@ -1,0 +1,38 @@
+{
+  "newsarticle": [
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Easiest Ever MOIST Apple Cake",
+      "url": "http://www.recipetineats.com/easy-apple-cake-recipe/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://www.recipetineats.com/easy-apple-cake-recipe/"
+      },
+      "thumbnailUrl": "https://www.recipetineats.com/wp-content/uploads/2016/09/Apple-Cake-5.jpg?w=150&h=150&crop=1",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.recipetineats.com/wp-content/uploads/2016/09/Apple-Cake-5.jpg"
+      },
+      "articleSection": "All Thanksgiving Recipes",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Nagi"
+        }
+      ],
+      "creator": [
+        "Nagi"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "RecipeTin Eats",
+        "logo": ""
+      },
+      "keywords": [],
+      "dateCreated": "2016-09-30T06:00:00Z",
+      "datePublished": "2016-09-30T06:00:00Z",
+      "dateModified": "2020-12-16T00:46:05Z"
+    }
+  ]
+}

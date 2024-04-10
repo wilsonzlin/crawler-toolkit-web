@@ -1,0 +1,11 @@
+{
+  "viewport": "width=device-width, initial-scale=1.0, user-scalable=no",
+  "description": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+  "fb:app_id": "1321688464574422",
+  "twitter:card": "summary_large_image",
+  "twitter:site": "@huggingface",
+  "og:title": "meta-llama/Llama-2-7b-chat-hf · Hugging Face",
+  "og:type": "website",
+  "og:url": "https://huggingface.co/meta-llama/Llama-2-7b-chat-hf",
+  "og:image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/meta-llama/Llama-2-7b-chat-hf.png"
+}

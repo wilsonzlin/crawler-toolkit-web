@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+	class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light"
+	lang="en-us"
+	dir="ltr"
+	data-authenticated="false"
+	data-auth-status-determined="false"
+	data-target="docs"
+	x-ms-format-detection="none">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta property="og:title" content="Understanding the Table service data model (REST API) - Azure Storage" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-the-table-service-data-model" />
+			<meta property="og:description" content="The Table service offers structured storage in the form of tables." />
+
+	<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+
+	<meta property="og:image:alt" content="Microsoft Learn" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<meta name="twitter:site" content="@MicrosoftLearn" />
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="author" content="seanmcc-msft" />
+<meta name="breadcrumb_path" content="../../breadcrumb/toc.json" />
+<meta name="depot_name" content="Azure.AzureRestApi" />
+<meta name="description" content="The Table service offers structured storage in the form of tables." />
+<meta name="document_id" content="f70e84cb-7349-29e1-b166-9e3087d92ab1" />
+<meta name="document_version_independent_id" content="287eaebb-d416-12a0-9892-6acc5132ce85" />
+<meta name="enable_rest_try_it" content="true" />
+<meta name="feedback_help_link_type" content="" />
+<meta name="feedback_help_link_url" content="" />
+<meta name="feedback_product_url" content="" />
+<meta name="feedback_system" content="None" />
+<meta name="git_commit_id" content="ede20618bc9a933eedfaa72d22c76ef581326087" />
+<meta name="gitcommit" content="https://github.com/Azure/azure-docs-rest-apis/blob/ede20618bc9a933eedfaa72d22c76ef581326087/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md" />
+<meta name="locale" content="en-us" />
+<meta name="manager" content="tjwilliams" />
+<meta name="moniker_definition_rel" content="../../.monikers.Azure.AzureRestApi.json" />
+<meta name="ms.author" content="seanmcc" />
+<meta name="ms.date" content="11/16/2020" />
+<meta name="ms.devlang" content="rest-api" />
+<meta name="ms.service" content="azure-storage" />
+<meta name="ms.topic" content="reference" />
+<meta name="original_content_git_url" content="https://github.com/Azure/azure-docs-rest-apis/blob/live/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md" />
+<meta name="page_type" content="conceptual" />
+<meta name="products" content="https://authoring-docs-microsoft.poolparty.biz/devrel/de8ce683-cbe1-461b-bae7-77db0888ec6d" />
+<meta name="rest_product" content="Azure" />
+<meta name="schema" content="Conceptual" />
+<meta name="site_name" content="Docs" />
+<meta name="toc_rel" content="../azure/toc.json" />
+<meta name="uhfHeaderId" content="azure" />
+<meta name="updated_at" content="2023-06-27 09:44 PM" />
+<meta name="word_count" content="1175" />
+
+
+	<meta name="persistent_id" content="5a136091-bb79-c8e9-42ca-a01e438e9686" />
+	
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/de8ce683-cbe1-461b-bae7-77db0888ec6d" data-source="generated" />
+
+	
+
+
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/a06cf482-4ca9-4582-a142-bcf842258d42" data-source="generated" />
+
+	
+
+
+	<meta name="scope" content="Azure, REST" />
+	<meta name="github_feedback_content_git_url" content="https://github.com/Azure/azure-docs-rest-apis/blob/main/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md" />
+<link href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-the-table-service-data-model" rel="canonical">
+	<title>Understanding the Table service data model (REST API) - Azure Storage | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="/_themes/docs.theme/master/en-us/_themes/styles/7f9cfa1b.site-ltr.css ">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: 'azure',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			feedbackHelpLinkType:'',
+			feedbackHelpLinkUrl:'',
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			feedbackProductUrl: '',
+			extendBreadcrumb: false,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			isPermissioned: false,
+			isPrivateUnauthorized: false,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "seanmcc-msft", url: "https://github.com/seanmcc-msft" },
+						{ name: "tamram", url: "https://github.com/tamram" },
+						{ name: "JasonWHowell", url: "https://github.com/JasonWHowell" },
+						{ name: "Duncanma", url: "https://github.com/Duncanma" },
+						{ name: "davidmatson", url: "https://github.com/davidmatson" },
+						{ name: "robinsh", url: "https://github.com/robinsh" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+
+	<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+
+		<link rel="preconnect" href="//mscom.demdex.net" crossorigin>
+		<link rel="dns-prefetch" href="//target.microsoft.com">
+		<link rel="dns-prefetch" href="//microsoftmscompoc.tt.omtrdc.net">
+		<link
+			rel="preload"
+			as="script"
+			href="/static/third-party/adobe-target/at-js/2.9.0/at.js"
+			integrity="sha384-1/viVM50hgc33O2gOgkWz3EjiD/Fy/ld1dKYXJRUyjNYVEjSUGcSN+iPiQF7e4cu"
+			crossorigin="anonymous"
+			id="adobe-target-script"
+			type="application/javascript"
+		/>
+		<script src="/_themes/docs.theme/master/en-us/_themes/scripts/4bf62799.index-docs.js"></script>
+</head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;"
+			hidden
+		>
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+						style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+						style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+		</div>
+		<!-- liquid-tag banners global -->
+
+		<!-- site header -->
+		<header id="ms--site-header" data-test-id="site-header-wrapper" class="display-none" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"></header>
+
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+	<div id="ms--primary-nav" class="nav-bar">
+		<div class="nav-bar-brand">
+			<a itemprop="url" href="https://www.microsoft.com" aria-label="Microsoft" class="nav-bar-button">
+				<div class="nav-bar-logo has-background-image theme-display is-light" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+				<div class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope"></div>
+			</a>
+		</div>
+	</div>
+	<div id="ms--secondary-nav" class="nav-bar border-bottom is-hidden-mobile"></div>
+</header>
+		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button>
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" role="navigation" aria-label="Primary"></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none">
+
+										</div>
+									</details>
+
+									<bread-crumbs id="article-header-breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"></bread-crumbs>
+
+									<div id="article-header-page-actions"  class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a
+											id="lang-link-tablet"
+											class="button button-primary button-clear button-sm display-none display-inline-flex-tablet"
+											title="Read in English" data-bi-name="language-toggle"
+											data-read-in-link
+											hidden>
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon>
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text>Read in English</span>
+										</a>
+
+											<button
+												type="button"
+												class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet"
+												data-list-type="collection"
+												data-bi-name="collection"
+												title="Add to collection">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+											<a	data-contenteditbtn
+												class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet"
+												aria-label="Edit"
+												title="Edit This Document"
+												data-bi-name="edit"
+
+													hidden
+
+														href="https://github.com/Azure/azure-docs-rest-apis/blob/main/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+														data-original_content_git_url="https://github.com/Azure/azure-docs-rest-apis/blob/live/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+														data-original_content_git_url_template="{repo}/blob/{branch}/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+														data-pr_repo=""
+														data-pr_branch=""
+											>
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button
+														data-page-action-item="overflow-mobile"
+														type="button"
+														class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet"
+														data-bi-name="contents-expand"
+														data-contents-button
+														data-popover-close>
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+															<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a
+													id="lang-link-overflow"
+													class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet"
+													title="Read in English" data-bi-name="language-toggle"
+													data-page-action-item="overflow-mobile"
+													data-check-hidden="true"
+													data-read-in-link
+													hidden
+													>
+													<span class="icon" aria-hidden="true" data-read-in-link-icon>
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text>Read in English</span>
+												</a>
+
+													<button
+														type="button"
+														class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet"
+														data-list-type="collection"
+														data-bi-name="collection"
+														title="Add to collection"
+														data-page-action-item="overflow-mobile"
+														data-check-hidden="true"
+														data-popover-close>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+													<a	data-contenteditbtn
+														class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet"
+														aria-label="Edit"
+														title="Edit This Document"
+														data-bi-name="edit"
+
+															hidden
+
+																href="https://github.com/Azure/azure-docs-rest-apis/blob/main/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+																data-original_content_git_url="https://github.com/Azure/azure-docs-rest-apis/blob/live/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+																data-original_content_git_url_template="{repo}/blob/{branch}/docs-ref-conceptual/storageservices/Understanding-the-Table-Service-Data-Model.md"
+																data-pr_repo=""
+																data-pr_branch=""
+													>
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button
+														class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus"
+														title="Print"
+														type="button"
+														aria-label="Print"
+														data-bi-name="print"
+														data-page-action-item="overflow-all"
+														data-popover-close
+														data-print-page
+														data-check-hidden="true">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none
+														border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button hidden>
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+										<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="understanding-the-table-service-data-model">Understanding the Table service data model</h1>
+
+
+									<div class="display-flex justify-content-space-between align-items-center flex-wrap-wrap page-metadata-container">
+										<div class="margin-right-xxs">
+											<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+														<li>
+Article														</li>
+															<li class="visibility-hidden-visual-diff">
+																<time class="is-invisible" data-article-date aria-label="Article review date" datetime="2023-06-27T21:44:00Z" data-article-date-source="calculated">06/27/2023</time>
+															</li>
+														<li class="contributors-holder display-none-print">
+															<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																	6 contributors
+															</button>
+														</li>
+											</ul>
+										</div>
+
+<div id="user-feedback" class="margin-block-xxs display-none-print" data-hide-on-archived>
+	<button
+		id="user-feedback-button"
+		data-test-id="conceptual-feedback-button"
+		class="button button-sm button-clear button-primary"
+		type="button"
+		data-bi-name="user-feedback-button"
+		data-user-feedback-button
+	>
+		<span class="icon" aria-hidden="true">
+			<span class="docon docon-like"></span>
+		</span>
+		<span>Feedback</span>
+	</button>
+</div>
+									</div>
+
+									<div id="ms--inline-notifications" data-bi-name="inline-notification"></div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print margin-bottom-sm" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+											<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">In this article</h2>
+										</nav>
+
+								<!-- <content> -->
+									<p>The Table service offers structured storage in the form of tables. The following sections outline the Table service data model.</p>
+<h2 id="storage-account">Storage Account</h2>
+<p>A storage account is a globally unique entity within the storage system. The storage account is the parent namespace for the Table service, and is the basis for authorization. You can create any number of tables within a given storage account, as long as each table is uniquely named.</p>
+<p>The storage account must always be specified in the request URI. The base URI for accessing the Table service is as follows:</p>
+<pre><code>https://myaccount.table.core.windows.net  
+</code></pre>
+<h2 id="tables-entities-and-properties">Tables, Entities, and Properties</h2>
+<p>Tables store data as collections of entities. Entities are similar to rows. An entity has a primary key and a set of properties. A property is a name, typed-value pair, similar to a column.</p>
+<p>The Table service does not enforce any schema for tables, so two entities in the same table may have different sets of properties. Developers may choose to enforce a schema on the client side. A table may contain any number of entities.</p>
+<h3 id="table-names">Table Names</h3>
+<p>Table names must conform to these rules:</p>
+<ul>
+<li><p>Table names must be unique within an account.</p>
+</li>
+<li><p>Table names may contain only alphanumeric characters.</p>
+</li>
+<li><p>Table names cannot begin with a numeric character.</p>
+</li>
+<li><p>Table names are case-insensitive.</p>
+</li>
+<li><p>Table names must be from 3 to 63 characters long.</p>
+</li>
+<li><p>Some table names are reserved, including &quot;tables&quot;. Attempting to create a table with a reserved table name returns error code 404 (Bad Request).</p>
+</li>
+</ul>
+<p>These rules are also described by the regular expression &quot;^[A-Za-z][A-Za-z0-9]{2,62}$&quot;.</p>
+<p>Table names preserve the case with which they were created, but are case-insensitive when used.</p>
+<h3 id="property-names">Property Names</h3>
+<p>Property names are case-sensitive strings up to 255 characters in size. Property names should follow naming rules for <a href="https://go.microsoft.com/fwlink/?LinkId=155321" data-linktype="external">C# identifiers</a>.</p>
+<div class="NOTE">
+<p>Note</p>
+<p>Some C# identifiers are not valid according to the <a href="https://go.microsoft.com/fwlink/?LinkId=155322" data-linktype="external">XML specification</a>. These identifiers may not be used in property names, because property names are sent via an XML payload in a request against the Table service.</p>
+</div>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>Property names are passed to the Table service within a URL. Certain characters must be percent-encoded to appear in a URL, using UTF-8 (preferred) or MBCS. This encoding occurs automatically when you use the Azure Storage client libraries. However, there are certain characters that are not valid in URL paths even when encoded. These characters cannot appear in property names.  Code points like \uE000, while valid in NTFS filenames, are not valid Unicode characters, so they cannot be used.  In addition, some ASCII or Unicode characters, like control characters (0x00 to 0x1F, \u0081, etc.), are also not allowed. For rules governing Unicode strings in HTTP/1.1 see:</p>
+<ul>
+<li><a href="http://www.ietf.org/rfc/rfc2616.txt" data-linktype="external">RFC 2616, Section 2.2: Basic Rules</a></li>
+<li><a href="http://www.ietf.org/rfc/rfc3987.txt" data-linktype="external">RFC 3987</a></li>
+</ul>
+</div>
+<div class="NOTE">
+<p>Note</p>
+<p>Beginning with version 2009-04-14, the Table service no longer supports including the dash (-) character in property names.</p>
+</div>
+<h3 id="property-limitations">Property Limitations</h3>
+<p>An entity can have up to 255 properties, including 3 system properties described in the following section. Therefore, the user may include up to 252 custom properties, in addition to the 3 system properties. The combined size of all data in an entity's properties cannot exceed 1 MiB.</p>
+<h3 id="system-properties">System Properties</h3>
+<p>An entity always has the following system properties:</p>
+<ul>
+<li><p><code>PartitionKey</code> property</p>
+</li>
+<li><p><code>RowKey</code> property</p>
+</li>
+<li><p><code>Timestamp</code> property</p>
+</li>
+</ul>
+<p>These system properties are automatically included for every entity in a table. The names of these properties are reserved and cannot be changed. The developer is responsible for inserting and updating the values of <code>PartitionKey</code> and <code>RowKey</code>. The server manages the value of <code>Timestamp</code>, which cannot be modified.</p>
+<h4 id="characters-disallowed-in-key-fields">Characters Disallowed in Key Fields</h4>
+<p>The following characters are not allowed in values for the <code>PartitionKey</code> and <code>RowKey</code> properties:</p>
+<ul>
+<li><p>The forward slash (/) character</p>
+</li>
+<li><p>The backslash (\) character</p>
+</li>
+<li><p>The number sign (#) character</p>
+</li>
+<li><p>The question mark (?) character</p>
+</li>
+<li><p>Control characters from U+0000 to U+001F, including:</p>
+<ul>
+<li>The horizontal tab (\t) character</li>
+<li>The linefeed (\n) character</li>
+<li>The carriage return (\r) character</li>
+</ul>
+</li>
+<li><p>Control characters from U+007F to U+009F</p>
+</li>
+</ul>
+<h4 id="partitionkey-property">PartitionKey Property</h4>
+<p>Tables are partitioned to support load balancing across storage nodes. A table's entities are organized by partition. A partition is a consecutive range of entities possessing the same partition key value. The partition key is a unique identifier for the partition within a given table, specified by the <code>PartitionKey</code> property. The partition key forms the first part of an entity's primary key. The partition key may be a string value up to 1 KiB in size.</p>
+<p>You must include the <code>PartitionKey</code> property in every insert, update, and delete operation.</p>
+<h4 id="rowkey-property">RowKey Property</h4>
+<p>The second part of the primary key is the row key, specified by the <code>RowKey</code> property. The row key is a unique identifier for an entity within a given partition. Together the <code>PartitionKey</code> and <code>RowKey</code> uniquely identify every entity within a table.</p>
+<p>The row key is a string value that may be up to 1 KiB in size.</p>
+<p>You must include the <code>RowKey</code> property in every insert, update, and delete operation.</p>
+<h4 id="timestamp-property">Timestamp Property</h4>
+<p>The <code>Timestamp</code> property is a <code>DateTime</code> value that is maintained on the server side to record the time an entity was last modified. The Table service uses the <code>Timestamp</code> property internally to provide optimistic concurrency. The value of the <code>Timestamp</code> property for an entity advances each time the entity is modified. This property should not be set on insert or update operations (the value will be ignored).</p>
+<p>The <code>Timestamp</code> property must be expressed in one of the accepted ISO 8601 UTC formats. For more information about accepted UTC formats, see <a href="formatting-datetime-values" data-linktype="relative-path">Formatting DateTime values</a>.</p>
+<h3 id="property-types">Property Types</h3>
+<p>The Table service supports a subset of data types defined by the <a href="https://www.odata.org/" data-linktype="external">OData Protocol Specification</a>. The following table shows the supported property types for the Table service:</p>
+<table>
+<thead>
+<tr>
+<th>OData Data Type</th>
+<th>Common Language Runtime type</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Edm.Binary</code></td>
+<td><code>byte[]</code></td>
+<td>An array of bytes up to 64 KiB in size.</td>
+</tr>
+<tr>
+<td><code>Edm.Boolean</code></td>
+<td><code>bool</code></td>
+<td>A Boolean value.</td>
+</tr>
+<tr>
+<td><code>Edm.DateTime</code></td>
+<td><code>DateTime</code></td>
+<td>A 64-bit value expressed as Coordinated Universal Time (UTC). The supported <code>DateTime</code> range begins from 12:00 midnight, January 1, 1601 A.D. (C.E.), UTC. The range ends at December 31, 9999. For more information, see <a href="formatting-datetime-values" data-linktype="relative-path">Formatting DateTime values</a>.</td>
+</tr>
+<tr>
+<td><code>Edm.Double</code></td>
+<td><code>double</code></td>
+<td>A 64-bit floating point value.</td>
+</tr>
+<tr>
+<td><code>Edm.Guid</code></td>
+<td><code>Guid</code></td>
+<td>A 128-bit globally unique identifier.</td>
+</tr>
+<tr>
+<td><code>Edm.Int32</code></td>
+<td><code>Int32</code> or <code>int</code></td>
+<td>A 32-bit integer.</td>
+</tr>
+<tr>
+<td><code>Edm.Int64</code></td>
+<td><code>Int64</code> or <code>long</code></td>
+<td>A 64-bit integer.</td>
+</tr>
+<tr>
+<td><code>Edm.String</code></td>
+<td><code>String</code></td>
+<td>A UTF-16-encoded value. String values may be up to 64 KiB in size. Note that the maximum number of characters supported is about 32 K or less.</td>
+</tr>
+</tbody>
+</table>
+<p>By default a property is created as type <code>String</code>, unless you specify a different type. To explicitly type a property, specify its data type by using the appropriate OData data type for an <a href="insert-entity" data-linktype="relative-path">Insert Entity</a> or <a href="update-entity2" data-linktype="relative-path">Update Entity</a> operation. For more information, see <a href="inserting-and-updating-entities" data-linktype="relative-path">Inserting and Updating Entities</a>.</p>
+<p>The Table service does not persist <code>null</code> values for properties. When querying entities, the above property types are all non-nullable. When writing entities, the above property types are all nullable, and any property with a <code>null</code> value is handled as if the payload did not contain that property.</p>
+<p>For examples that show how to filter on the various property types in a query request URI, see <a href="querying-tables-and-entities" data-linktype="relative-path">Querying Tables and Entities</a>.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/" data-linktype="external">Get Started with Table Storage</a></li>
+<li><a href="table-service-concepts" data-linktype="relative-path">Table Service Concepts</a></li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+						<!-- end recommendations section -->
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<aside
+								id="ms--additional-resources-mobile"
+								aria-label="Additional resources"
+								class="display-none-desktop display-none-print"
+							>
+								<hr class="hr" hidden />
+								<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>Additional resources</h2>
+								<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" hidden></section>
+								<section id="right-rail-training-mobile" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-events-mobile" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-qna-mobile" data-bi-name="qna-link-card" hidden></section>
+							</aside>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+<a
+	href="https://aka.ms/yourcaliforniaprivacychoices"
+	class="button button-sm button-clear flex-shrink-0"
+	data-mscc-ic="false"
+	data-bi-name="your-privacy-choices"
+>
+	<svg
+		role="img"
+		aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 30 14"
+		xml:space="preserve"
+		height="16"
+		width="43"
+		focusable="false"
+	>
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2024</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div
+							id="ms--additional-resources"
+							class="right-container column is-4-desktop display-none display-block-desktop"
+							data-bi-name="pageactions"
+							role="complementary"
+							aria-label="Additional resources"
+						>
+							<div id="affixed-right-container" class="margin-top-sm-tablet" data-bi-name="right-column">
+								<h2 id="ms--additional-resources-heading" class="title is-6 margin-top-md" hidden>Additional resources</h2>
+								<section id="right-rail-events" data-bi-name="events-card" hidden></section>
+								<section id="right-rail-training" data-bi-name="learning-resources-card" hidden></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" hidden></section>
+								<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="In this article">
+									<h3>In this article</h3>
+								</nav>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+			<a
+				data-mscc-ic="false"
+				class="locale-selector-link button button-sm button-clear flex-shrink-0"
+				href="#"
+				data-bi-name="select-locale">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text"></span></a>
+		<div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+<a
+	href="https://aka.ms/yourcaliforniaprivacychoices"
+	class="button button-sm button-clear flex-shrink-0"
+	data-mscc-ic="false"
+	data-bi-name="your-privacy-choices"
+>
+	<svg
+		role="img"
+		aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 30 14"
+		xml:space="preserve"
+		height="16"
+		width="43"
+		focusable="false"
+	>
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger"
+		aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="light">
+					<span class="theme-light margin-right-xxs">
+						<span
+							class="theme-selector-icon border display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="dark">
+					<span class="theme-dark margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start"
+					data-theme-to="high-contrast">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span
+							class="border theme-selector-icon display-inline-block has-body-background"
+							aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background" />
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li>
+		<li>&copy; Microsoft 2024</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+</body>
+</html>

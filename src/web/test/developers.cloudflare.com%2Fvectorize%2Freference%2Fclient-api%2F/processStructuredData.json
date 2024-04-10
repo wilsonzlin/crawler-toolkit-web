@@ -1,0 +1,38 @@
+{
+  "breadcrumblist": [
+    {
+      "itemListElement": [
+        {
+          "item": "/products/",
+          "name": "Products",
+          "position": "1",
+          "@context": "https://schema.org",
+          "@type": "ListItem"
+        },
+        {
+          "item": "/vectorize/",
+          "name": "Vectorize",
+          "position": "2",
+          "@context": "https://schema.org",
+          "@type": "ListItem"
+        },
+        {
+          "item": "/vectorize/reference/",
+          "name": "Reference",
+          "position": "3",
+          "@context": "https://schema.org",
+          "@type": "ListItem"
+        },
+        {
+          "item": "/vectorize/reference/client-api/",
+          "name": "Vectorize API",
+          "position": "4",
+          "@context": "https://schema.org",
+          "@type": "ListItem"
+        }
+      ],
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList"
+    }
+  ]
+}

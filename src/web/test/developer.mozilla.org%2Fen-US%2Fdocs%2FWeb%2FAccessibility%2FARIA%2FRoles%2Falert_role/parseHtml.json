@@ -1,0 +1,17 @@
+{
+  "articleStructuredDataCount": 0,
+  "canonicalUrl": "developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role",
+  "htmlLang": "en-us",
+  "imageUrl": "developer.mozilla.org/mdn-social-share.cd6c4a5a.png",
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 5038,
+  "mainArticleVideoCount": 0,
+  "ogLocale": "en_US",
+  "ogType": "website",
+  "pageCharCount": 8476,
+  "readerable": true,
+  "snippet": "The alert role is for important, and usually time-sensitive, information. The alert is a type of status processed as an atomic live region.DescriptionThe alert role is used to communicate an important and usually time-sensitive message to the user. Wh",
+  "structuredData": {},
+  "title": "ARIA: alert role - Accessibility | MDN",
+  "titleCount": 1
+}

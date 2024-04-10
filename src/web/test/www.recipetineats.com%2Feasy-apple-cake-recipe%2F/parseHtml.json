@@ -1,0 +1,56 @@
+{
+  "articleStructuredDataCount": 1,
+  "canonicalUrl": "www.recipetineats.com/easy-apple-cake-recipe/",
+  "htmlLang": "en-us",
+  "imageUrl": "www.recipetineats.com/wp-content/uploads/2016/09/Apple-Cake-5.jpg",
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 6570,
+  "mainArticleVideoCount": 0,
+  "ogLocale": "en_US",
+  "ogType": "article",
+  "pageCharCount": 12992,
+  "readerable": true,
+  "snippet": "This Apple Cake recipe is from a reader and is a gem of a find! The cake is really moist, perfectly spiced, and studded with tender pieces of fresh apple. The batter is incredibly fast to make with just a wooden spoon – no electric mixer required! Doz",
+  "structuredData": {
+    "newsarticle": [
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Easiest Ever MOIST Apple Cake",
+        "url": "http://www.recipetineats.com/easy-apple-cake-recipe/",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "http://www.recipetineats.com/easy-apple-cake-recipe/"
+        },
+        "thumbnailUrl": "https://www.recipetineats.com/wp-content/uploads/2016/09/Apple-Cake-5.jpg?w=150&h=150&crop=1",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://www.recipetineats.com/wp-content/uploads/2016/09/Apple-Cake-5.jpg"
+        },
+        "articleSection": "All Thanksgiving Recipes",
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Nagi"
+          }
+        ],
+        "creator": [
+          "Nagi"
+        ],
+        "publisher": {
+          "@type": "Organization",
+          "name": "RecipeTin Eats",
+          "logo": ""
+        },
+        "keywords": [],
+        "dateCreated": "2016-09-30T06:00:00Z",
+        "datePublished": "2016-09-30T06:00:00Z",
+        "dateModified": "2020-12-16T00:46:05Z"
+      }
+    ]
+  },
+  "timestamp": "2016-09-30T06:00:00.000Z",
+  "timestampModified": "2020-12-16T00:46:05.000Z",
+  "title": "Easiest Ever MOIST Apple Cake",
+  "titleCount": 1
+}

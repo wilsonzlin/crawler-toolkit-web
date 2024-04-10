@@ -1,0 +1,34 @@
+{
+  "articleStructuredDataCount": 0,
+  "canonicalUrl": "github.com/Azure/azure-sdk-for-js",
+  "htmlLang": "en",
+  "imageUrl": "repository-images.githubusercontent.com/108311273/c62c7d36-fd13-4ccf-90ac-1272a5af56d4",
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 3701,
+  "mainArticleVideoCount": 0,
+  "ogType": "object",
+  "pageCharCount": 6695,
+  "readerable": true,
+  "snippet": "This repository is for the Azure SDK for JavaScript (Node.js & Browser). It contains libraries for the breadth of Azure services. Management libraries are packages that you would use to provision and manage Azure resources. Client libraries are packag",
+  "structuredData": {
+    "softwaresourcecode": [
+      {
+        "author": "Azure",
+        "name": "azure-sdk-for-js",
+        "text": "Azure SDK for JavaScript\n\nThis repository is for the Azure SDK for JavaScript (Node.js & Browser). It contains libraries for the breadth of Azure services. Management libraries are packages that you would use to provision and manage Azure resources. Client libraries are packages that you would use to consume these resources and interact with them.\n\nGetting started\n\nA few helpful resources to get started are:\n\nThe readme for each package contains code samples and package information. This readme can be found in the corresponding package folder under the folder of the service of your choice in the /sdk folder of this repository. The same readme file can be found on the landing page for the package in npm.\n\nThe API reference documentation of the latest versions of these packages, can be found at our public developer docs.\n\nThe API reference documentation of older versions, can be found in our versioned developer docs.\n\nEach service might have a number of libraries available from each of the following categories:\n\nClient\n\nManagement\n\nNOTE: Some of these packages have beta versions. If you need to ensure your code is ready for production, use one of the stable, non-beta packages.\n\nClient\n\nGiven an Azure resource already exists, you would use the client libraries to consume it and interact with it.\nMost of these libraries follow the Azure SDK Design Guidelines for JavaScript & TypeScript and share a number of core functionalities such as retries, logging, transport protocols, authentication protocols, etc. Others will be updated in the near future to follow the guidelines as well.\n\nTo get a list of all client libraries that follow the new guidelines, please visit our Azure SDK releases page.\n\nManagement\n\nManagement libraries enable you to provision and manage Azure resources via the Azure Resource Manager i.e. ARM. You can recognize these libraries by @azure/arm- in their package names. These are purely auto-generated based on the swagger files that represent the APIs for resource management.\n\nNewer versions of these libraries follow the Azure SDK Design Guidelines for TypeScript. These new versions provide a number of core capabilities that are shared amongst all Azure SDKs, including the intuitive Azure Identity library, an HTTP Pipeline with custom policies, error-handling, distributed tracing, and much more. A few helpful resources to get started with these are:\n\nList of management libraries that follow the new guidelines\n\nDocumentation and code samples.\n\nMigration guide that shows how to transition from older versions of libraries.\n\nNOTE: If you are experiencing authentication issues with the management libraries after upgrading certain packages, it's possible that you upgraded to the new versions of SDK without changing the authentication code, please refer to the migration guide mentioned above for proper instructions.\n\nNeed help?\n\nFor detailed documentation visit our Azure SDK for JavaScript documentation\n\nFile an issue via GitHub Issues\n\nCheck previous questions or ask new ones on StackOverflow using azure-sdk-js tag.\n\nRead our Support documentation.\n\nCommunity\n\nTry our community resources.\n\nReporting security issues and security bugs\n\nSecurity issues and bugs should be reported privately, via email, to the Microsoft Security Response Center (MSRC) secure@microsoft.com. You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Further information, including the MSRC PGP key, can be found in the Security TechCenter.\n\nContributing\n\nFor details on contributing to this repository, see the contributing guide.\n\nThis project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit\nhttps://cla.microsoft.com.\n\nWhen you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repositories using our CLA.\n\nThis project has adopted the Microsoft Open Source Code of Conduct. For more information see the Code of Conduct FAQ or contact opencode@microsoft.com with any additional questions or comments.",
+        "keywords": [
+          "TypeScript 86.3",
+          "JavaScript 13.4",
+          "PowerShell 0.3",
+          "Bicep 0.0",
+          "HTML 0.0",
+          "Mustache 0.0"
+        ],
+        "@context": "http://schema.org",
+        "@type": "SoftwareSourceCode"
+      }
+    ]
+  },
+  "title": "GitHub - Azure/azure-sdk-for-js: This repository is for active development of the Azure SDK for JavaScript (NodeJS & Browser). For consumers of the SDK we recommend visiting our public developer docs at https://docs.microsoft.com/javascript/azure/ or our versioned developer docs at https://azure.github.io/azure-sdk-for-js.",
+  "titleCount": 1
+}
