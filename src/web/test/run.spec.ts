@@ -84,7 +84,10 @@ for (const d of readdirSync(__dirname)) {
       await readComputeCheckJson(`${dir}/parseHtml.json`, p);
     });
     test("parseHtmlMeta", async () => {
-      await readComputeCheckJson(`${dir}/parseHtmlMeta.json`, parseHtmlMeta(parse()));
+      await readComputeCheckJson(
+        `${dir}/parseHtmlMeta.json`,
+        parseHtmlMeta(parse()),
+      );
     });
     test("pickHtmlIcon", async () => {
       await readComputeCheckJson(

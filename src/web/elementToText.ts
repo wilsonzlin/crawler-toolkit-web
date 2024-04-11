@@ -63,7 +63,14 @@ const INLINE_ELEMS = new Set([
   "wbr",
 ]);
 
-export const elementToText = (elem: Element) => {
+export const elementToText = (
+  elem: Element,
+  {
+    emitLinkHrefs,
+  }: {
+    emitLinkHrefs?: boolean;
+  } = {},
+) => {
   let out = "";
   const visit = (elem: Element) => {
     if (elem.tagName === "br") {
@@ -74,12 +81,20 @@ export const elementToText = (elem: Element) => {
     if (!INLINE_ELEMS.has(elem.tagName)) {
       out += "\n\n";
     }
+    const shouldEmitHref =
+      emitLinkHrefs && elem.tagName === "a" && elem.attribs["href"];
+    if (shouldEmitHref) {
+      out += "[";
+    }
     for (const c of elem.childNodes) {
       if (c.nodeType === 3) {
         out += c.nodeValue;
       } else if ("tagName" in c) {
         visit(c);
       }
+    }
+    if (shouldEmitHref) {
+      out += `](${elem.attribs["href"]})`;
     }
     if (!INLINE_ELEMS.has(elem.tagName)) {
       out += "\n\n";
