@@ -1,5 +1,3 @@
-import splitString from "@xtjs/lib/js/splitString";
-
 // Sourced from https://publicsuffix.org/list/public_suffix_list.dat.
 const PUBLIC_SUFFIX_LIST_RAW = `
 // This Source Code Form is subject to the terms of the Mozilla Public
@@ -13776,6 +13774,23 @@ export const TLDS = new Set(
     .map((l) => l.split(".").at(-1)!),
 );
 
+const canonicalPathnamePercentEncoding = (raw: string) =>
+  raw
+    .replaceAll("%", "%25")
+    .replaceAll("?", "%3F")
+    .replaceAll("#", "%23")
+    .replaceAll("/", "%2F");
+
+const canonicalQueryKeyPercentEncoding = (raw: string) =>
+  raw
+    .replaceAll("%", "%25")
+    .replaceAll("#", "%23")
+    .replaceAll("&", "%26")
+    .replaceAll("=", "%3D");
+
+const canonicalQueryValuePercentEncoding = (raw: string) =>
+  raw.replaceAll("%", "%25").replaceAll("#", "%23").replaceAll("&", "%26");
+
 export const normaliseUrlPathname = (raw: string) => {
   // TODO Do CR/LF need to be encoded as they would likely break the HTTP request headers?
   let pathname;
@@ -13783,13 +13798,7 @@ export const normaliseUrlPathname = (raw: string) => {
     pathname = raw
       .split("/")
       .filter((p, i, a) => p || i == a.length - 1) // Allow trailing slash.
-      .map((p) =>
-        decodeURIComponent(p)
-          .replaceAll("%", "%25")
-          .replaceAll("?", "%3F")
-          .replaceAll("#", "%23")
-          .replaceAll("/", "%2F"),
-      )
+      .map((p) => canonicalPathnamePercentEncoding(decodeURIComponent(p)))
       .join("/");
   } catch {
     // Handle invalid percent escape sequences (thrown by decodeURIComponent). See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Malformed_URI.
@@ -13801,36 +13810,53 @@ export const normaliseUrlPathname = (raw: string) => {
   return pathname;
 };
 
-// This is a stricter parser/regex than the `URL` class:
-// - If has protocol, must be explicitly http or https (not data URI, JavaScript, deep app link, etc.). This avoids mixing up colons in any username:password, domain, or port with protocol.
-// - There must be no port or username:password; this avoids confusing colons.
-// - There must be a domain that has more than one level (i.e. at least one dot) and nothing other than [a-z0-9-].
-// - There must be a path.
-// - Once we see the forward slash, we are clear, as everything afterwards is the path.
-const URLPFX_RE = /^(?:https?:\/\/)?((?:[a-z0-9-]+\.)+[a-z0-9-]+)\//;
+// - Removes any username:password component.
+// - Removes any port component.
+// - Removes any hash component.
+// - Optionally removes any query component.
+// - Sorts query params.
+// - Canonicalises percent encoding.
+// - Canonicalises pathname.
+// - Ensures valid TLD.
+// - Ensures valid percent escape sequences.
+// - Ensures valid protocol (http: or https:); prefixes https:// if no protocol is present.
 export const normaliseUrlToParts = (raw: string, allowQuery = false) => {
-  const m = URLPFX_RE.exec(raw);
-  if (!m) {
+  if (!/^[a-z0-9-]+:\/\//.test(raw)) {
+    raw = `https://${raw}`;
+  }
+  let url;
+  try {
+    url = new URL(raw);
+  } catch {
     return;
   }
-  const domain = m[1];
+  if (url.protocol != "http:" && url.protocol != "https:") {
+    return;
+  }
+  const domain = url.hostname;
   if (!TLDS.has(domain.split(".").at(-1)!)) {
     return;
   }
-  if (domain.length > 80) {
-    // Database limitation. Checking `.length` is fine given all chars are ASCII.
-    return;
-  }
-  const pathRaw = raw.slice(m[0].length - 1).replace(/#.*$/, "");
-  const [pathnameRaw, queryRaw] = splitString(pathRaw, "?", 2);
-  const query = allowQuery && queryRaw ? `?${queryRaw}` : "";
-  const pathname = normaliseUrlPathname(pathnameRaw);
+  const pathname = normaliseUrlPathname(url.pathname);
   if (pathname == undefined) {
     return;
   }
-  if (pathname.length > 600) {
-    // Database limitation. Yes, DB limit is in Unicode codepoints, not UTF-8 bytes, so `.length` is correct (or inaccurate in the sense it's more strict given UCS2).
-    return;
+  let query = "";
+  if (allowQuery) {
+    url.searchParams.sort(); // This is stable.
+    if (url.searchParams.size) {
+      query =
+        "?" +
+        [...url.searchParams]
+          .map(([k, v]) =>
+            [
+              // `k` and `v` are already decoded.
+              canonicalQueryKeyPercentEncoding(k),
+              canonicalQueryValuePercentEncoding(v),
+            ].join("="),
+          )
+          .join("&");
+    }
   }
   return { domain, pathname, query };
 };
@@ -13839,7 +13865,7 @@ export const normaliseUrl = (raw: string, allowQuery = false) => {
   return u && `${u.domain}${u.pathname}${u.query}`;
 };
 
-// WARNING: The base URL must alraedy be normalised.
+// WARNING: The base URL must already be normalised.
 export const resolveUrl = (
   baseNormUrl: string,
   href: string,
@@ -13851,7 +13877,7 @@ export const resolveUrl = (
   let raw;
   try {
     // While baseNormUrl is always well formed, href may not be, so this could still throw.
-    raw = new URL(href, `https://${baseNormUrl}`);
+    raw = new URL(href, baseNormUrl);
   } catch {
     return undefined;
   }
