@@ -158,7 +158,7 @@ export const parseHtml = (
   // Many top pages have multiple <h1> elements, so it can't be used as an indicator of quality.
   const h1 = $("body h1").first().text().trim();
 
-  const pageText = elementToText($("body")[0]);
+  const pageText = mapExists($("body")[0], elementToText) ?? "";
   const pageCharCount = pageText.replace(/\s/g, "").length;
 
   if (additionalElementSelectorsToRemove?.length) {
