@@ -13877,7 +13877,7 @@ export const resolveUrl = (
   let raw;
   try {
     // While baseNormUrl is always well formed, href may not be, so this could still throw.
-    raw = new URL(href, baseNormUrl);
+    raw = new URL(href, `https://${baseNormUrl}`);
   } catch {
     return undefined;
   }
