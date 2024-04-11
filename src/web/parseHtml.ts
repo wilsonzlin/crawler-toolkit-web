@@ -3,7 +3,7 @@ import mapExists from "@xtjs/lib/js/mapExists";
 import mapValue from "@xtjs/lib/js/mapValue";
 import maybeParseDate from "@xtjs/lib/js/maybeParseDate";
 import reversedComparator from "@xtjs/lib/js/reversedComparator";
-import { CheerioAPI } from "cheerio";
+import { CheerioAPI, Element } from "cheerio";
 import { normaliseUrl, resolveUrl } from "../url";
 import { collectRawLdjson } from "./collectRawLdjson";
 import { collectRawMicrodata } from "./collectRawMicrodata";
@@ -105,7 +105,7 @@ export const stripListsOfLinks = ($: CheerioAPI) => {
 };
 
 // Unfortunately, too many great sites and content/pages on the web don't use `<article>`, and some use multiple (e.g. comments, related articles, ads); therefore, we just assume that if the content is readerable, and there is no <article>, we'll take the whole <body> as the article.
-export const getMainArticle = ($: CheerioAPI) =>
+export const getMainArticle = ($: CheerioAPI): Element | undefined =>
   $(
     `
       main article,
@@ -117,7 +117,7 @@ export const getMainArticle = ($: CheerioAPI) =>
   )
     .toArray()
     .sort(reversedComparator(derivedComparator(($e) => $($e).text().length)))
-    .at(0) ?? $("body")[0];
+    .at(0) ?? $("body")[0]; // <body> may not exist.
 
 // This should generally be called before normalising to hoover up all links, including outside of primary content and on bad status.
 export const extractLinks = ($: CheerioAPI, url: string) => {
@@ -186,7 +186,7 @@ export const parseHtml = (
   `).remove();
   // We no longer try to format a more semantic structured text (e.g. Markdown), like indentation, hyphens for list entries, backticks for code spans and blocks, and repeating table headings for every cell. It's dubious that these have an effect on accuracy, and the table repetition uses a lot of tokens and doesn't really consider common non-ideal use cases (table containing largely sentences instead of numeric values, colspan and rowspan, extremely large tables, etc.).
   // Most NLP models do not tokenise whitespace and do not treat newlines specially, so there's no point in trying to preserve newlines in this text. (Even if we could tokenise space and CR/LF, the models weren't trained on them anyway.)
-  const mainArticleText = elementToText(mainArticle);
+  const mainArticleText = mapExists(mainArticle, elementToText) ?? "";
   const mainArticleCharCount = mainArticleText.replace(/\s/g, "").length;
 
   const sd = processStructuredData({
