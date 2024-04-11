@@ -1,12 +1,10 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "www.php.net/manual/en/language.basic-syntax.phptags.php",
   "htmlLang": "en",
   "mainArticleAudioCount": 0,
   "mainArticleCharCount": 1552,
   "mainArticleVideoCount": 0,
   "pageCharCount": 3414,
-  "readerable": true,
   "snippet": "CakeFest 2024: The Official CakePHP Conference Escaping from HTML » « Basic syntax Submit a Pull Request Report a Bug PHP tags When PHP parses a file, it looks for opening and closing tags, which are <?php and ?> which tell PHP to start and stop inter",
   "structuredData": {},
   "title": "PHP: PHP tags - Manual",

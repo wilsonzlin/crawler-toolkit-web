@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "stackoverflow.com/questions/16623835/remove-a-fixed-prefix-suffix-from-a-string-in-bash",
   "htmlLang": "en",
   "imageUrl": "cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "website",
   "pageCharCount": 15265,
-  "readerable": true,
   "snippet": "Ask Question Asked 10 years, 10 months ago Modified 5 months ago Viewed 743k times 798 I want to remove the prefix/suffix from a string. For example, given: string=\"hello-world\" prefix=\"hell\" suffix=\"ld\" How do I get the following result? \"o-wor\" Shar",
   "structuredData": {
     "qapage": [

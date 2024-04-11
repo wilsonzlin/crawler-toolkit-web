@@ -3,14 +3,12 @@ import mapExists from "@xtjs/lib/js/mapExists";
 import mapValue from "@xtjs/lib/js/mapValue";
 import maybeParseDate from "@xtjs/lib/js/maybeParseDate";
 import reversedComparator from "@xtjs/lib/js/reversedComparator";
-import { load } from "cheerio";
+import { CheerioAPI } from "cheerio";
 import { normaliseUrl, resolveUrl } from "../url";
-import { isProbablyReaderable } from "./calculateIsReaderable";
 import { collectRawLdjson } from "./collectRawLdjson";
 import { collectRawMicrodata } from "./collectRawMicrodata";
 import { elementToText } from "./elementToText";
 import { parseHtmlMeta } from "./parseHtmlMeta";
-import { pickHtmlIcon } from "./pickHtmlIcon";
 import { processStructuredData } from "./processStructuredData";
 
 const orFirst = (v: undefined | null | string | string[]) =>
@@ -19,124 +17,73 @@ const orFirst = (v: undefined | null | string | string[]) =>
 const orLast = (v: undefined | null | string | string[]) =>
   v == null ? undefined : Array.isArray(v) ? v.at(-1) : v;
 
-export const parseHtml = ({
-  sourceHtml,
-  url,
-  additionalElementSelectorsToRemove,
-}: {
-  sourceHtml: string;
-  url: string; // Normalised.
-  additionalElementSelectorsToRemove?: string[];
-}) => {
-  const links = new Set<string>();
-  const $ = load(sourceHtml);
+// Remove text that not even "full page text" (used for page noise ratio calculation) should consider.
+// Semantically [hidden] means not part of the page (e.g. an HTML template, an error message, a dialog), but we should check if it's often used to visually hide semantic text and elements (incorrectly) for crawlers to understand that would normally be superceded by fancy JS and as such should be kept.
+// No need to remove <iframe> or <object>; they're useful for detecting media and shouldn't contain any text content anyway.
+export const SEL_STRIP_GENERAL = `
+  [hidden],
+  canvas,
+  noscript,
+  script,
+  style,
+  svg,
+  template
+`;
 
-  // This should be done before any of our DOM manipulations, as our changes make the page look more and more like an article.
-  const readerable = isProbablyReaderable($);
+// Our rationale for removing <footer> elements:
+// - They almost always contain ancillary content.
+// Our rationale for removing [role=note] elements:
+// - Literally defined as ancillary content by spec.
+// WARNING: Do not remove based on "common" classes and IDs (e.g. `#menu`); even if they're somewhat accurate, they can often lead to removing entire sections from (or the entirety of) primary content on some edge case pages. Let the caller manually provide selectors to remove if they want to take the risk, but don't hard code here.
+// This should be anchored to <body> e.g. `$("body").find(SEL_STRIP_NON_PRIMARY).remove()`.
+// No need to remove <link> or <meta> as they cannot contain text, and may be useful to keep around for downstream users.
+export const SEL_STRIP_NON_PRIMARY = `
+  [aria-hidden],
+  [role=alert],
+  [role=alertdialog],
+  [role=button],
+  [role=checkbox],
+  [role=combobox],
+  [role=complementary],
+  [role=feed],
+  [role=menu],
+  [role=menubar],
+  [role=navigation],
+  [role=none],
+  [role=note],
+  [role=presentation],
+  [role=search],
+  [role=searchbox],
+  [role=tablist],
+  [role=toolbar],
+  [role=tooltip],
+  [role=tree],
+  [role=treegrid],
+  aside,
+  button,
+  dialog,
+  footer,
+  form,
+  hr,
+  input,
+  label,
+  menu,
+  nav,
+  object,
+  option,
+  progress,
+  select,
+  title
+`;
 
-  const htmlLang = $("html").attr("lang")?.trim().toLowerCase();
-
-  const canonicalUrl = mapExists($("link[rel=canonical]").attr("href"), (c) =>
-    resolveUrl(url, c),
-  );
-
-  // Find links before normalising as we want to hoover up all links, including outside of primary content and on bad status.
-  for (const $a of $("a[href]")) {
-    const normLink = resolveUrl(url, $a.attribs["href"]);
-    if (normLink) {
-      links.add(normLink);
-    }
-  }
-
-  const metaTags = parseHtmlMeta($);
-  const metaStr = (k: string) => mapValue(metaTags[k], orLast);
-
-  const ldjson = collectRawLdjson($);
-  const microdata = collectRawMicrodata($);
-  const iconUrl = pickHtmlIcon(url, $);
-
-  // Remove text that not even "full page text" (used for page noise ratio calculation) should consider.
-  // Semantically [hidden] means not part of the page (e.g. an HTML template, an error message, a dialog), but we should check if it's often used to visually hide semantic text and elements (incorrectly) for crawlers to understand that would normally be superceded by fancy JS and as such should be kept.
-  // No need to remove <iframe> or <object>; they're useful for detecting media and shouldn't contain any text content anyway.
-  $(`
-    [hidden],
-    canvas,
-    noscript,
-    script,
-    style,
-    svg
-  `).remove();
-
-  // Do these AFTER removing <noscript> and <svg>. <title> is a valid element in <svg>.
-  const titleElemValue = $("head title").first().text().trim();
-  const titleCount = $("title").length;
-  // Many top pages have multiple <h1> elements, so it can't be used as an indicator of quality.
-  const h1 = $("body h1").first().text().trim();
-
-  const pageText = elementToText($("body")[0]);
-  const pageCharCount = pageText.replace(/\s/g, "").length;
-
-  // Our rationale for removing <footer> elements:
-  // - They almost always contain ancillary content.
-  // Our rationale for removing [role=note] elements:
-  // - Literally defined as ancillary content by spec.
-  // WARNING: Do not remove based on "common" classes and IDs (e.g. `#menu`); even if they're somewhat accurate, they can often lead to removing entire sections from (or the entirety of) primary content on some edge case pages. Let the caller manually provide selectors to remove if they want to take the risk, but don't hard code here.
-  const add = additionalElementSelectorsToRemove?.length
-    ? additionalElementSelectorsToRemove.concat("").join(",")
-    : "";
-  $("body")
-    .find(
-      `
-        ${add}
-        [aria-hidden],
-        [role=alert],
-        [role=alertdialog],
-        [role=button],
-        [role=checkbox],
-        [role=combobox],
-        [role=complementary],
-        [role=feed],
-        [role=menu],
-        [role=menubar],
-        [role=navigation],
-        [role=none],
-        [role=note],
-        [role=presentation],
-        [role=search],
-        [role=searchbox],
-        [role=tablist],
-        [role=toolbar],
-        [role=tooltip],
-        [role=tree],
-        [role=treegrid],
-        aside,
-        button,
-        dialog,
-        footer,
-        form,
-        hr,
-        input,
-        label,
-        link,
-        menu,
-        meta,
-        nav,
-        object,
-        option,
-        progress,
-        select,
-        title
-      `,
-    )
-    .remove();
-
-  // Remove lists of links.
-  // A good heuristic: if all links are removed, does the list have any text left?
-  // - This handles complex nesting e.g. ul > li > div > div > h3 > a.
-  // - This handles not only simple bullet-point lists, but even more sophisticated ones like a set of tags, carousel of cards, etc.
-  // - This doesn't require NLP (e.g. does previous text or heading say "Related articles"), which is far more complex and difficult.
-  // - This doesn't require semantic labelling of the HTML, which pages almost never do (they often put these right in the `main article` and don't have any ARIA role or even a good class name or ID).
-  // - This works extremely well while remaining very simple and elegant. It can be expanded on by counting how many words/characters remain, etc.
+// Remove lists of links.
+// A good heuristic: if all links are removed, does the list have any text left?
+// - This handles complex nesting e.g. ul > li > div > div > h3 > a.
+// - This handles not only simple bullet-point lists, but even more sophisticated ones like a set of tags, carousel of cards, etc.
+// - This doesn't require NLP (e.g. does previous text or heading say "Related articles"), which is far more complex and difficult.
+// - This doesn't require semantic labelling of the HTML, which pages almost never do (they often put these right in the `main article` and don't have any ARIA role or even a good class name or ID).
+// - This works extremely well while remaining very simple and elegant. It can be expanded on by counting how many words/characters remain, etc.
+export const stripListsOfLinks = ($: CheerioAPI) => {
   for (const $ul of $(`
     [class*=items i],
     [class*=links i],
@@ -155,21 +102,74 @@ export const parseHtml = ({
       $($ul).remove();
     }
   }
+};
 
-  // Unfortunately, too many great sites and content/pages on the web don't use `<article>`, and some use multiple (e.g. comments, related articles, ads); therefore, we just assume that if the content is readerable, and there is no <article>, we'll take the whole <body> as the article.
-  const mainArticle =
-    $(
-      `
-        main article,
-        #article,
-        [role=article],
-        [itemtype=http://schema.org/Article],
-        [itemtype=https://schema.org/Article]
-      `,
-    )
-      .toArray()
-      .sort(reversedComparator(derivedComparator(($e) => $($e).text().length)))
-      .at(0) ?? $("body")[0];
+// Unfortunately, too many great sites and content/pages on the web don't use `<article>`, and some use multiple (e.g. comments, related articles, ads); therefore, we just assume that if the content is readerable, and there is no <article>, we'll take the whole <body> as the article.
+export const getMainArticle = ($: CheerioAPI) =>
+  $(
+    `
+      main article,
+      #article,
+      [role=article],
+      [itemtype=http://schema.org/Article],
+      [itemtype=https://schema.org/Article]
+    `,
+  )
+    .toArray()
+    .sort(reversedComparator(derivedComparator(($e) => $($e).text().length)))
+    .at(0) ?? $("body")[0];
+
+// This should generally be called before normalising to hoover up all links, including outside of primary content and on bad status.
+export const extractLinks = ($: CheerioAPI, url: string) => {
+  const links = new Set<string>();
+  for (const $a of $("a[href]")) {
+    const normLink = resolveUrl(url, $a.attribs["href"]);
+    if (normLink) {
+      links.add(normLink);
+    }
+  }
+  return links;
+};
+
+export const extractCanonicalUrl = ($: CheerioAPI, url: string) =>
+  mapExists($("link[rel=canonical]").attr("href"), (c) => resolveUrl(url, c));
+
+export const parseHtml = (
+  $: CheerioAPI,
+  {
+    additionalElementSelectorsToRemove,
+  }: {
+    additionalElementSelectorsToRemove?: string[];
+  } = {},
+) => {
+  const htmlLang = $("html").attr("lang")?.trim().toLowerCase();
+
+  const metaTags = parseHtmlMeta($);
+  const metaStr = (k: string) => mapValue(metaTags[k], orLast);
+
+  const ldjson = collectRawLdjson($);
+  const microdata = collectRawMicrodata($);
+
+  $(SEL_STRIP_GENERAL).remove();
+
+  // Do these AFTER removing <noscript> and <svg>. <title> is a valid element in <svg>.
+  const titleElemValue = $("head title").first().text().trim();
+  const titleCount = $("title").length;
+  // Many top pages have multiple <h1> elements, so it can't be used as an indicator of quality.
+  const h1 = $("body h1").first().text().trim();
+
+  const pageText = elementToText($("body")[0]);
+  const pageCharCount = pageText.replace(/\s/g, "").length;
+
+  if (additionalElementSelectorsToRemove?.length) {
+    $("body").find(additionalElementSelectorsToRemove.join(",")).remove();
+  }
+  $("body").find(SEL_STRIP_NON_PRIMARY).remove();
+
+  stripListsOfLinks($);
+
+  const mainArticle = getMainArticle($);
+
   const mainArticleAudioCount = $(mainArticle).find("audio").length;
   const mainArticleVideoCount = $(mainArticle).find(
     "video, iframe[src^=https://www.youtube.com/embed/], iframe[src^=https://www.youtube-nocookie.com/embed/]",
@@ -204,7 +204,7 @@ export const parseHtml = ({
   const articleStructuredDataCount = artSds.length;
   const artSd = artSds[0];
 
-  // Yes we assume that the first <time> in the first <header> represents the "time" (and not modified time, release time, etc.). This is usually safe because we trust the content (we have vetted the site) and usually the "main" time comes first.
+  // Yes we assume that the first <time> in the first <header> represents the "time" (and not modified time, release time, etc.).
   const timestamp =
     maybeParseDate(artSd?.["datePublished"]) ??
     maybeParseDate(metaStr("article:published_time")) ??
@@ -255,12 +255,9 @@ export const parseHtml = ({
 
   return {
     articleStructuredDataCount,
-    canonicalUrl,
     description,
     htmlLang,
-    iconUrl,
     imageUrl,
-    links,
     mainArticleAudioCount,
     mainArticleCharCount,
     mainArticleText,
@@ -270,7 +267,6 @@ export const parseHtml = ({
     ogType,
     pageCharCount,
     pageText,
-    readerable,
     snippet,
     structuredData: sd,
     timestamp,

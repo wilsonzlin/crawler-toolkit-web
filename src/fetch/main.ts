@@ -253,6 +253,7 @@ export const readSafeFetchResponse = async (
                   resolve(false);
                   break;
                 case "truncate":
+                  // TODO If the response is compressed, truncating at an arbitrary point may corrupt the compressed data and make it uncompressable. Ideally, we should count the bytes AFTER decompressing, but that conflicts with checking against Content-Length (which represents the length BEFORE any decompression).
                   resolve(true);
                   // Stop processing further "data" event chunks.
                   state.response?.destroy();

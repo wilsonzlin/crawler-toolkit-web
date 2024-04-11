@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "qota.com.au/products/qota-powder-chocolate",
   "htmlLang": "en",
   "imageUrl": "qota.com.au/cdn/shop/products/QOTA_LARGE_POUCH-CHOC-LABEL-WEB_1024x1024.jpg?v=1684452910",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "product",
   "pageCharCount": 4416,
-  "readerable": true,
   "snippet": "Skip to content FREE SHIPPING ON ALL ORDERS AUSTRALIA WIDE 98 reviews Regular price $55.00 Sale Better nutrition through innovation. Our best-selling powder for a reason! Our nutritionally complete chocolate powder provides a filling, convenient and n",
   "structuredData": {
     "organization": [
@@ -34,7 +32,7 @@
           "@context": "http://schema.org",
           "@type": "Offer"
         },
-        "description": "Better nutrition through innovation.\n\nOur best-selling powder for a reason! Our nutritionally complete chocolate powder provides a filling, convenient and nutritionally balanced meal designed to deliver sustained energy. \n\nEach meal delivers\n\n2060 kJ (492 calories)\n\nWe include 30G PROTEIN in every shake because protein improves both satiety and the building of lean muscle.\n\nWe've maximised nutrition by packing 26 ESSENTIAL VITAMINS + MINERALS into every shake. Here’s what’s included in every QOTA meal: Vitamin A, Vitamin B6, Vitamin B12, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin, Riboflavin, Niacin, Folate, Biotin, Pantothenic Acid, Calcium, Chromium, Copper, Iodine, Iron, Magnesium, Manganese, Molybdenum, Phosphorus, Potassium, Selenium, Sodium, Zinc. Phew!\n\nAlso contains ESSENTIAL FATS (omegas 3 + 6).\n\nLOW SUGAR - everything you need and nothing you don't.\n\nWhat you'll receive: \n\nLarge pouch of choc powder = 14 meals\n\nShipping: Qualifies for FREE SHIPPING. Orders placed by 10am weekdays normally despatch that same day.\n\nIngredients: CHOCOLATE POWDER CONTAINS OAT, GLUTEN, MILK AND SOY. MADE IN A FACILITY THAT ALSO PROCESSES EGGS.\nChocolate Powder Full Ingredients\nVisit the Help Centre\n\nNew Formulations Information\n\nSampler sizes available here",
+        "description": "Better nutrition through innovation.\n\nOur best-selling powder for a reason! Our nutritionally complete chocolate powder provides a filling, convenient and nutritionally balanced meal designed to deliver sustained energy. \n\nEach meal delivers 2060 kJ (492 calories)\n\nWe include 30G PROTEIN in every shake because protein improves both satiety and the building of lean muscle.\n\nWe've maximised nutrition by packing 26 ESSENTIAL VITAMINS + MINERALS into every shake. Here’s what’s included in every QOTA meal: Vitamin A, Vitamin B6, Vitamin B12, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin, Riboflavin, Niacin, Folate, Biotin, Pantothenic Acid, Calcium, Chromium, Copper, Iodine, Iron, Magnesium, Manganese, Molybdenum, Phosphorus, Potassium, Selenium, Sodium, Zinc. Phew!\n\nAlso contains ESSENTIAL FATS (omegas 3 + 6).\n\nLOW SUGAR - everything you need and nothing you don't.\n\nWhat you'll receive: \n\nLarge pouch of choc powder = 14 meals\n\nShipping: Qualifies for FREE SHIPPING. Orders placed by 10am weekdays normally despatch that same day.\n\nIngredients: CHOCOLATE POWDER CONTAINS OAT, GLUTEN, MILK AND SOY. MADE IN A FACILITY THAT ALSO PROCESSES EGGS.\nChocolate Powder Full Ingredients\nVisit the Help Centre\nNew Formulations Information\nSampler sizes available here",
         "@context": "http://schema.org",
         "@type": "Product"
       }

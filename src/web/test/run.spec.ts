@@ -61,16 +61,13 @@ for (const d of readdirSync(__dirname)) {
   const url = decodeURIComponent(d);
   describe(url, () => {
     const src = readFileSync(`${dir}/src.html`, "utf8");
-    const $ = load(src);
+    // Regenerate $ for every arg to avoid cross-contamination (i.e. one function changes the page which affects some subsequent tested function's output).
+    const parse = () => load(src);
     // Split `mainArticleText` and `pageText` into separate output text files for easier diffing for both the texts and the other object entries.
     // `metaTags` is already tested directly.
-    // We don't care about `links`.
-    const { mainArticleText, pageText, metaTags, links, ...p } = parseHtml({
-      sourceHtml: src,
-      url,
-    });
-    const ldjson = collectRawLdjson($);
-    const microdata = collectRawMicrodata($);
+    const { mainArticleText, pageText, metaTags, ...p } = parseHtml(parse());
+    const ldjson = collectRawLdjson(parse());
+    const microdata = collectRawMicrodata(parse());
     test("collectRawLdjson", async () => {
       await readComputeCheckJson(`${dir}/collectRawLdjson.json`, ldjson);
     });
@@ -87,12 +84,12 @@ for (const d of readdirSync(__dirname)) {
       await readComputeCheckJson(`${dir}/parseHtml.json`, p);
     });
     test("parseHtmlMeta", async () => {
-      await readComputeCheckJson(`${dir}/parseHtmlMeta.json`, parseHtmlMeta($));
+      await readComputeCheckJson(`${dir}/parseHtmlMeta.json`, parseHtmlMeta(parse()));
     });
     test("pickHtmlIcon", async () => {
       await readComputeCheckJson(
         `${dir}/pickHtmlIcon.json`,
-        pickHtmlIcon(url, $),
+        pickHtmlIcon(parse(), url),
       );
     });
     test("processStructuredData", async () => {

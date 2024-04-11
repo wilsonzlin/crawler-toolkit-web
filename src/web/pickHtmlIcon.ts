@@ -5,7 +5,7 @@ import splitString from "@xtjs/lib/js/splitString";
 import { CheerioAPI } from "cheerio";
 import { resolveUrl } from "../url";
 
-export const pickHtmlIcon = (url: string, $: CheerioAPI) => {
+export const pickHtmlIcon = ($: CheerioAPI, url: string) => {
   let bestIcon:
     | undefined
     | {

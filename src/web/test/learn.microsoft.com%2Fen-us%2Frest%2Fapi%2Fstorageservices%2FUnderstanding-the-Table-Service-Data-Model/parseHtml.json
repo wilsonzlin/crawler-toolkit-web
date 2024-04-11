@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "learn.microsoft.com/en-us/rest/api/storageservices/understanding-the-table-service-data-model",
   "htmlLang": "en-us",
   "imageUrl": "learn.microsoft.com/en-us/media/open-graph-image.png",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "website",
   "pageCharCount": 6583,
-  "readerable": true,
   "snippet": "Skip to main content Article 06/27/2023 The Table service offers structured storage in the form of tables. The following sections outline the Table service data model. Storage Account A storage account is a globally unique entity within the storage sy",
   "structuredData": {
     "organization": [

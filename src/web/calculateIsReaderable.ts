@@ -15,6 +15,7 @@ const READERABLE_RE = {
 // Some differences to note:
 // - The original code runs in a live browser environment where JS and CSS have all been evaluated. This may make this algorithm less accurate.
 // - Normally the algorithm takes in a function that determines whether an element is visible. In our case however, we already remove all [hidden], [aria-hidden], etc., and we don't have live CSS styles to check against.
+// This should be called before any stripping, as those changes can make the page look more and more like an article.
 export const isProbablyReaderable = ($: CheerioAPI) => {
   const minScore = 20;
   const minContentLength = 140;

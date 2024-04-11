@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "react.dev/",
   "htmlLang": "en",
   "imageUrl": "react.dev/images/og-home.png",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "website",
   "pageCharCount": 6580,
-  "readerable": true,
   "snippet": "The library for web and native user interfacesLearn ReactAPI ReferenceCreate user interfaces from componentsReact lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, a",
   "structuredData": {},
   "title": "React",

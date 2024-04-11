@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "github.com/Azure/azure-sdk-for-js",
   "htmlLang": "en",
   "imageUrl": "repository-images.githubusercontent.com/108311273/c62c7d36-fd13-4ccf-90ac-1272a5af56d4",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "object",
   "pageCharCount": 6695,
-  "readerable": true,
   "snippet": "This repository is for the Azure SDK for JavaScript (Node.js & Browser). It contains libraries for the breadth of Azure services. Management libraries are packages that you would use to provision and manage Azure resources. Client libraries are packag",
   "structuredData": {
     "softwaresourcecode": [

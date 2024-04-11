@@ -1,6 +1,5 @@
 {
   "articleStructuredDataCount": 0,
-  "canonicalUrl": "developers.cloudflare.com/vectorize/reference/client-api/",
   "htmlLang": "en",
   "imageUrl": "developers.cloudflare.com/dev-products-preview.png",
   "mainArticleAudioCount": 0,
@@ -8,7 +7,6 @@
   "mainArticleVideoCount": 0,
   "ogType": "website",
   "pageCharCount": 4668,
-  "readerable": true,
   "snippet": "This page covers the Vectorize API available within Cloudflare Workers, including usage examples.​​ Operations​​ Insert vectorslet vectorsToInsert = [ {id: \"123\", values: [32.4, 6.5, 11.2, 10.3, 87.9]}, {id: \"456\", values: [2.5, 7.8, 9.1, 76.9, 8.5]},",
   "structuredData": {
     "breadcrumblist": [

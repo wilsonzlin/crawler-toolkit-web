@@ -1,7 +1,11 @@
 import { Element } from "cheerio";
 
 // <br> is intentionally omitted since we want that to produce a newline.
+// <link> and <meta> are included because they are not block elements and should not cause a line break; however, they're not inline formatting elements.
 const INLINE_ELEMS = new Set([
+  "link",
+  "meta",
+
   "a",
   "abbr",
   "acronym",
