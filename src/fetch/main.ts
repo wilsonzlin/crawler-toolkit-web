@@ -75,6 +75,7 @@ export type SafeFetchState = {
   response?: IncomingMessage;
   result: SafeFetchResult;
   maxContentLength: number;
+  maxContentLengthExceededStrategy: "error" | "truncate";
 };
 
 // From the Node.js docs: "... the data from the response object must be consumed, either by calling response.read() whenever there is a 'readable' event, or by adding a 'data' handler, or by calling the .resume() method. Until the data is consumed, the 'end' event will not fire. Also, until the data is read it will consume memory that can eventually lead to a 'process out of memory' error."
@@ -110,6 +111,7 @@ export type SafeFetchOptions = {
   timeoutMs: number;
   userAgent?: string;
   maxContentLength: number;
+  maxContentLengthExceededStrategy?: "error" | "truncate"; // Defaults to "error".
   isValidContentType: (ct: string | undefined) => boolean;
 };
 
@@ -121,6 +123,7 @@ export const beginSafeFetch = async (
     userAgent,
     timeoutMs,
     maxContentLength,
+    maxContentLengthExceededStrategy = "error",
     isValidContentType,
   }: SafeFetchOptions,
 ): Promise<SafeFetchState> => {
@@ -134,6 +137,7 @@ export const beginSafeFetch = async (
   const state: SafeFetchState = {
     result,
     maxContentLength,
+    maxContentLengthExceededStrategy,
   };
   // We use a nested function for easier control flow with `return`.
   await fetchInner(state, async () => {
@@ -202,7 +206,11 @@ export const beginSafeFetch = async (
     result.lastModified = maybeParseDate(headers["last-modified"]);
     result.redirectLocation = headers.location;
     // Too many pages are dynamic and don't have a Content-Length, so we cannot bail as an error if it doesn't exist.
-    if (contentLength && contentLength > maxContentLength) {
+    if (
+      contentLength &&
+      contentLength > maxContentLength &&
+      maxContentLengthExceededStrategy === "error"
+    ) {
       result.error = "ContentLengthTooLarge";
       result.errorDetails = `${contentLength}`;
       return;
@@ -234,14 +242,25 @@ export const readSafeFetchResponse = async (
       !(await new Promise<boolean>((resolve, reject) => {
         state
           .response!.on("data", (chunk) => {
+            chunks.push(chunk);
             if (
               (result.receivedBytes += chunk.length) > state.maxContentLength
             ) {
-              result.error = "BodyTooLarge";
-              result.errorDetails = `${result.receivedBytes}`;
-              resolve(false);
+              switch (state.maxContentLengthExceededStrategy) {
+                case "error":
+                  result.error = "BodyTooLarge";
+                  result.errorDetails = `${result.receivedBytes}`;
+                  resolve(false);
+                  break;
+                case "truncate":
+                  resolve(true);
+                  // Stop processing further "data" event chunks.
+                  state.response?.destroy();
+                  break;
+                default:
+                  throw new UnreachableError();
+              }
             }
-            chunks.push(chunk);
           })
           .on("end", () => resolve(true))
           .on("error", reject);
@@ -249,7 +268,10 @@ export const readSafeFetchResponse = async (
     ) {
       return;
     }
-    const sourceRaw = Buffer.concat(chunks, result.receivedBytes);
+    const sourceRaw = Buffer.concat(
+      chunks,
+      Math.min(result.receivedBytes, state.maxContentLength),
+    );
     let source: Buffer;
     switch (result.contentEncoding) {
       case "br":
