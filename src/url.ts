@@ -13810,18 +13810,18 @@ export const normaliseUrlPathname = (raw: string) => {
   return pathname;
 };
 
-// - Removes any username:password component.
-// - Removes any port component.
-// - Removes any hash component.
-// - Optionally removes any query component.
-// - Sorts query params.
-// - Canonicalises percent encoding.
 // - Canonicalises pathname.
-// - Ensures valid TLD.
+// - Canonicalises percent encoding.
 // - Ensures valid percent escape sequences.
 // - Ensures valid protocol (http: or https:); prefixes https:// if no protocol is present.
+// - Ensures valid TLD.
+// - Optionally removes any query component.
+// - Removes any hash component.
+// - Removes any port component.
+// - Removes any username:password component.
+// - Sorts query params.
 export const normaliseUrlToParts = (raw: string, allowQuery = false) => {
-  if (!/^[a-z0-9-]+:\/\//.test(raw)) {
+  if (!/^[a-zA-Z0-9-+]+:\/\//.test(raw)) {
     raw = `https://${raw}`;
   }
   let url;
@@ -13830,7 +13830,8 @@ export const normaliseUrlToParts = (raw: string, allowQuery = false) => {
   } catch {
     return;
   }
-  if (url.protocol != "http:" && url.protocol != "https:") {
+  const protocol = url.protocol;
+  if (protocol != "http:" && protocol != "https:") {
     return;
   }
   const domain = url.hostname;
@@ -13858,11 +13859,11 @@ export const normaliseUrlToParts = (raw: string, allowQuery = false) => {
           .join("&");
     }
   }
-  return { domain, pathname, query };
+  return { protocol, domain, pathname, query };
 };
 export const normaliseUrl = (raw: string, allowQuery = false) => {
   const u = normaliseUrlToParts(raw, allowQuery);
-  return u && `${u.domain}${u.pathname}${u.query}`;
+  return u && `${u.protocol}//${u.domain}${u.pathname}${u.query}`;
 };
 
 // WARNING: The base URL must already be normalised.
@@ -13877,7 +13878,7 @@ export const resolveUrl = (
   let raw;
   try {
     // While baseNormUrl is always well formed, href may not be, so this could still throw.
-    raw = new URL(href, `https://${baseNormUrl}`);
+    raw = new URL(href, baseNormUrl);
   } catch {
     return undefined;
   }
@@ -13888,9 +13889,9 @@ export const resolveUrl = (
 // - This ensures the pathname still contains the leading slash.
 // - This reverses the hostname components order, useful for a lot of things.
 export const splitUrl = (normalisedUrl: string) => {
-  const pos = normalisedUrl.indexOf("/");
+  const url = new URL(normalisedUrl);
   return [
-    normalisedUrl.slice(0, pos).split(".").reverse().join("."),
-    normalisedUrl.slice(pos),
+    url.hostname.split(".").reverse().join("."),
+    url.pathname,
   ] as const;
 };
