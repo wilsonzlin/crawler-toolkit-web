@@ -131,6 +131,16 @@ export const extractLinks = ($: CheerioAPI, url: string) => {
   return links;
 };
 
+const getSdString = (v: unknown): string | undefined => {
+  if (typeof v == "string") {
+    return v;
+  }
+  if (Array.isArray(v) && typeof v.at(0) == "string") {
+    return v[0];
+  }
+  return undefined;
+};
+
 export const extractCanonicalUrl = ($: CheerioAPI, url: string) =>
   mapExists($("link[rel=canonical]").attr("href"), (c) => resolveUrl(url, c));
 
@@ -206,16 +216,16 @@ export const parseHtml = (
 
   // Yes we assume that the first <time> in the first <header> represents the "time" (and not modified time, release time, etc.).
   const timestamp =
-    maybeParseDate(artSd?.["datePublished"]) ??
+    maybeParseDate(getSdString(artSd?.["datePublished"])) ??
     maybeParseDate(metaStr("article:published_time")) ??
     maybeParseDate($(mainArticle).find("header time").attr("datetime"));
   const timestampModified =
-    maybeParseDate(artSd?.["dateModified"]) ??
+    maybeParseDate(getSdString(artSd?.["dateModified"])) ??
     maybeParseDate(metaStr("article:modified_time")) ??
     maybeParseDate(metaStr("og:updated_time"));
   // We prefer other sources instead of <title> as the <title> often contains other noise like the site name or some additional meta information. However, we prefer it over <h1> as the former is usually optimised for a concise page/tab title, whereas the latter could be contextual, stylistic, or contextual.
   const title = (
-    artSd?.["headline"] ||
+    getSdString(artSd?.["headline"]) ||
     metaStr("title") ||
     metaStr("og:title") ||
     metaStr("twitter:title") ||
@@ -224,17 +234,18 @@ export const parseHtml = (
   )
     .trim()
     .replace(/\s+/g, " ");
-  const description = artSd?.["description"]?.trim();
+  const description = getSdString(artSd?.["description"])?.trim();
   metaStr("description")?.trim() ||
     metaStr("og:description")?.trim() ||
     metaStr("twitter:description")?.trim() ||
     undefined;
   // The `image` property could be a URL string or an ImageObject object.
-  // TODO We should really vStruct validate structured data, as we're just guessing and possibly coercing types into strings here.
   const imageUrl = mapExists(
-    mapExists(
-      orFirst(artSd?.["image"]),
-      (v: any) => v["url"] ?? v["contentUrl"] ?? v,
+    getSdString(
+      mapExists(
+        orFirst(artSd?.["image"]),
+        (v: any) => v["url"] ?? v["contentUrl"] ?? v,
+      ),
     ) ??
       metaStr("og:image") ??
       metaStr("twitter:image:src"),
