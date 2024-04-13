@@ -1,0 +1,11 @@
+{
+  "articleStructuredDataCount": 0,
+  "mainArticleAudioCount": 0,
+  "mainArticleCharCount": 3889,
+  "mainArticleVideoCount": 0,
+  "pageCharCount": 3889,
+  "snippet": "Up: Filename Expansion [Contents][Index] 3.5.8.1 Pattern Matching Any character that appears in a pattern, other than the special pattern characters described below, matches itself. The NUL character may not occur in a pattern. A backslash escapes the",
+  "structuredData": {},
+  "title": "Pattern Matching (Bash Reference Manual)",
+  "titleCount": 1
+}

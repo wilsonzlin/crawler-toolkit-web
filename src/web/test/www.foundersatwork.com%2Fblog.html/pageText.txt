@@ -1,0 +1,541 @@
+Founders at Work
+
+ 
+
+Buy on Amazon
+
+o
+
+|
+
+Home
+
+Interviews
+
+Author
+
+Blog
+
+Y Combinator
+
+What Goes Wrong
+
+10/25/2012
+
+ 
+
+This is my talk from 2012 Startup School, pretty much exactly as delivered. 
+
+It's been more than 7 years since we started YC. In that time, we've funded 467 startups so I've seen a lot of patterns. There's a talk I always want to give at the beginning of each batch, warning everyone about things that I know are probably going to happen to them. I finally wrote down all my thoughts and I'm going to share them with you now.
+
+We all know that a lot of smart and talented people start startups. You see huge numbers of startups getting started, and yet there are actually only a handful of startups that are big successes. What happens along the way that causes such failure?
+
+It's like there's a tunnel full of monsters that kill them along the way. I'm going to tell you what these monsters are so you know to avoid them.
+
+Determination
+
+In general, your best weapon against these monsters is determination. Even though we usually use one word for it, determination is really two separate things: resilience and drive. Resilience keeps you from being pushed backwards. Drive moves you forwards.
+
+One reason you need resilience in a startup is that you are going to get rejected a lot. Even the most famous startups had surprising amounts of rejection early on.
+
+Everyone you encounter will have doubts about what you're doing—investors, potential employees, reporters, your family and friends. What you don't realize until you start a startup is how much external validation you've gotten for the conservative choices you've made in the past. You go to college and everyone says, "Great!" Then you graduate get a job at Google and everyone says, "Great!"
+
+What do you think people say when you quit your job to start a company to rent out airbeds?
+
+Check out Airbnb's website when they first launched in 2007. Here's how they describe what they do: Two designers create a way to connect at the IDSA conference. Have you even heard of the IDSA conference? Also, it was only for airbeds!
+
+This is not the sort of thing you get a lot of external validation for. Almost everyone is more impressed with you if you get a job at Google than if you make a website for people to rent out airbeds for conferences.
+
+Yet this is one of the most successful startups. Even if you are Airbnb, you are going to start out looking like an ugly duckling to most people.
+
+When Airbnb did YC back in early 2009, they had already endured tons of rejection. (Check out Brian Chesky's talk from Startup School in 2010. It's one of the most inspirational stories out there.) By the time they came to us, they had maxed out their credit cards. They were eating leftover Capn McCain cereal. They were at the end of their rope.
+
+Everyone thought their idea was crazy at the time—even I did actually—but they knew they were on to something. During YC, they made some key changes to their site, talked to users, set their goals, and measured everything. And the graphs started going up.
+
+Remember that new ideas usually seem crazy at first. But if you have a good idea and you execute well, eventually everyone will see it.
+
+We funded Eric Migicovsky about two years ago when he was working on Inpulse, the predecessor to the Pebble watch. Eric was a single founder and these watches have a quality that terrifies investors—they're hardware.
+
+Poor Eric had a really hard time getting funding. No one wanted to fund a hardware company. He met with lots of investors who'd say things like, "I love the idea. But I can't fund a hardware company." Some claimed they just didn't fund hardware as a rule, others said that there were too many capital expenses up front. They all said no when he showed them the concept.
+
+He'd been building the Pebble based on a lot of user feedback from the Inpulse, and he felt strongly that people wanted this product. So I remember he talked to Paul and they agreed he should give up on investors and put it on Kickstarter. His original goal was to raise $100,000 to make 1,000 watches. Instead of $100,000 Pebble raised $10.2mm in 30 days—the largest amount of money ever raised on Kickstarter. Now they are making 85,000 Pebbles.
+
+Even Y Combinator got rejected when we first started back in Cambridge, MA in the summer of '05. Now there are lots of organizations doing what we do, but trust me, when we first started, people thought we were crazy. Or just stupid. Even our own lawyers tried to talk us out of it.
+
+But 8 teams of founders took a chance on us and moved to Cambridge and got their $12,000 per team. I think they'd tell you that they had a great experience. We, too, knew we had hit on something interesting
+
+. So we focused on making something that a few people loved and we just expanded slowly from there.
+
+But it was a slow process.  When we came out to Silicon Valley in the winter of '06 we hardly knew anyone, so we decided to try to meet more investors to convince them to come to Demo Day . I got an introduction to the number one angel in the Valley, Ron Conway. Let me show you how he tried to brush us off.
+
+He said, "Is this in Boston? I stick mainly local." I replied, "No, we're in Mountain View and we'd love for you to come to Demo Day." He said, "Is this a chance to invest in the incubator?" I replied, "No, we don't want you to invest in us. It's a chance to invest in the individual startups." Then he told us he'd circle back, since he was jammed. We got the "am jammed now" from Ronco—it was so embarrassing. 
+
+It all worked out in the end though. He did wind up coming to Demo Day and he was impressed with what he saw. A year later, Ron came and spoke to the winter '07 batch of founders.
+
+Variety of Problems
+
+Remember, there were 2 components to determination: resilience and drive. We've talked about why you need resilience: because everyone will be down on you. You need drive to overcome the sheer variety of problems you will face in a startup.
+
+Some of them are painfully specific—like a lawsuit or a deal blowing up—and some are demoralizingly vague: no one is visiting your site and you don't know why.
+
+There's no playbook you can consult when these problems come up. You have to improvise. Sometimes you have to do things that seem kind of abnormal.
+
+Rajat Suri was a grad student at MIT when he started E La Carte. (E La Carte lets restaurant customers order and pay through a tablet.) He was so committed that he got a job as a waiter to learn what restaurants were like.
+
+The Collison brothers founded Stripe, which does payment processing online. When these guys got started, they were a pair of young programmers. They had no idea how to make deals with banks and credit card companies.
+
+I asked Patrick, "How did you even convince these big companies to work with you?" One trick that worked was to start with a phone call. Then people would pay attention to their arguments without being distracted by their youth. By the time they met in person and the companies could tell how young they were, they were already impressed.
+
+We funded the Lockitron guys back in the summer of '09—that's them at their YC interview. A year after YC, they were still figuring out their idea. They lived with the Wepay guys and one day the Wepays had a party for their investors. By that point the Lockitrons were working on a product to lock your door with an iPhone. They were able to impress one of the investors with their prototype, and he asked to have 40 installed in some startup offices he owned. The founders were psyched, but the commercial locks they needed to use cost $500 a pop. They didn't have $20,000 to fulfill an order that big. So they went around to the local locksmiths and scrapyards, buying broken locks for about $10 each. They fixed them themselves and were able to deliver on that order.
+
+Fast forward a few years later: these guys were ready to launch the newest version of the Lockitron and decided go on Kickstarter. And guess what? A day after Lockitron submitted their campaign, Kickstarter changed their policy about hardware companies and rejected them. The Lockitron guys decided to build their own Kickstarter and they did it in less than a week. They wondered if anyone would even come. Not only did people come, but they've already sold close to $2 million dollars' worth of Lockitrons this way. And they didn't need to give a cut to Kickstarter.
+
+Let me give you one last example of improvising. The Justin.tv founders were having a lot of scaling issues in the beginning. One weekend their whole video system went down. Kyle was in charge of it, but no one knew where Kyle was. And Kyle wasn't picking up his cell phone. This was live video so it was pretty critical that this get fixed immediately.
+
+Michael Siebel called Kyle's friends and found out he was in Lake Tahoe and got the address of the house. So here's a problem for you, you know the address where someone is and he's not answering his phone. How do you get a message to him right away? Michael went on Yelp and looked for a pizza place near the house and called them up and said, "I want to have a pizza delivered.  But never mind the pizza. Just send a delivery guy over and say these four words: The site is down." The pizza place was very confused by this, but they send the pizza guy without a pizza, Kyle answers the door, and the pizza guy says, "The site is down." Kyle was able to fix it, and the site was down for less than an hour total from beginning to end.
+
+Cofounder Disputes
+
+Another monster is cofounder disputes. People underestimate how critical founder relationships are to the success of a startup.
+
+Unfortunately, I've seen more founder breakups than I care to count. And when it happens, it can crush a startup.
+
+Be very careful when you decide to start a startup with someone. Do you know them well? Have you worked with them, gone to school with them? Don't slap yourself together with someone just because they are available and seem good enough. You'll probably regret it.
+
+And if you start seeing red flags, do something about it. Don't think that it will go away. It's a red flag when you find yourself worrying whether your cofounder is trustworthy or whether he/she works hard enough or is competent.
+
+When founders break up for whatever reason, it's a blow to the startup's productivity and morale. If there are three and one leaves, it's not so bad, but if there are two and one leaves, that's bad, because now you are a single founder and it's hard to do a startup as a single founder.
+
+Investors
+
+Investors tend to have a herd mentality. They like you if other investors like you.
+
+So if no investor likes you until others do, what happens when you talk to the first ones? No one likes you! It's like the catch 22 of not being able to get a job because you don't have enough experience.
+
+You are essentially starting off in a hole and you have to work your way out. You have to meet with lots investors and hear things like "I'd be interested once you have more traction" or "Who else is investing?"
+
+If you work hard enough, you may be able to find a few who are excited enough about you and the idea that they aren't put off by the fact that you don't have any investors yet.  Then when you have a few investors, you can start to make the herd mentality work for you instead of against you. Fundraising is slow and hard until it's fast and easy.
+
+But working to convince those first few investors can be really demoralizing. It's a grind. (There are some really good investors who aren't like this, but the median investor is a herd animal.)
+
+Investors will also drag their feet. Left to their own devices they'll just keep delaying. There's no downside for  them to delay, whereas delay will kill you, because while you are fundraising your company will grind to a halt.
+
+It blows my mind how many successful startups had a hard time fundraising at first. If you remember one piece of advice about investors, it's that you've got to create some type of competitive situation.
+
+I'll give you what has always stuck in my mind as the most amazing example of this: one of the founders of one of our more successful startups had a longstanding relationship with a VC. When the founder started the company and did YC, this VC kept in touch through the 3 months, not really doing anything except keeping a benevolent eye on him. The VC attended demo day, but didn't invest. After a few months, the startup got a termsheet from a prestigious VC. When the first VC heard about this, he shifted into panic mode. He faxed the founder a termsheet from his firm with the valuation blank and said, "Fill in whatever valuation you want and we're in."
+
+There are worse things investors can do to you than just delay. Sometimes they say yes and then change their mind. It's not a deal till the money is in the bank. We've seen some founders learn that they hard way.
+
+I could tell you a lot of horror stories to frighten you, but just remember that fundraising is a bitch.
+
+YC founders get to raise money under the best of circumstances and even for them it's a bitch.
+
+Distractions
+
+One of the reasons fundraising can be so damaging to your company is that it's a distraction.
+
+We warn everyone early on at YC to be very careful about distractions. Nobody is stupid enough to get distracted by things that aren't work-related, like playing video games. The kind of distractions founders fall for are things that seem like a reasonable way to spend their time.
+
+We tell people that during YC there are really only three things you should focus on: building things, talking to users, and exercising. Maybe this is a bit extreme, but the point is that early on in a startup all that matters is figuring out how to make something people want and doing it well. Don't spend all your time networking. Don't hire an army of interns. Just build stuff and talk to users. 
+
+(BTW, fundraising is a distraction, but it is necessary. So just try to spend as little time on it as possible.)
+
+One thing that isn't necessary, and is a bad distraction, is talking to corporate development (or corp dev) people. These are the people at big companies who buy startups. You get a call from a corp dev person and they want to learn more about what you are doing and explore possible ways of working together. The founder thinks, "Oh boy, this important company wants to work with me. I should at least take a meeting."
+
+I hate to sound harsh, but what these meetings really are for is for them to see if they want to do an HR acquisition.
+
+HR Acquisitions
+
+An HR acquisition means a company is essentially trying to hire you. (They are such a dangerous distraction that they get their own little monster!)
+
+There's nothing wrong with HR acquisitions, if that's what you want to do. But most founders don't start startups just to go get a job a big company with what amounts to a nice hiring bonus.
+
+Talking to corp dev early on isn't just a waste of time, it's uniquely demoralizing. I see this cycle happen over and over: the founders go to meet the corp dev people and think the meeting went great. They seemed so friendly and enthusiastic. The founders delude themselves into thinking that their startup is going to be the one that gets bought for $10 million after only 5 months. The founders start to think, "Yeah, we'd kind of like to get acquired," and then they start not to work on their startup as much and they lose momentum. Then they get the offer and it's essentially what they would have gotten if they walked in off the street and got a job. But by then they've gotten so accustomed to the idea of selling that they take it.
+
+So going down the corp dev road seriously can deflate your ambitions. HR acquisitions are what you do when you are failing. Don't pull the cord on your inflatable life raft until your ship is actually sinking!
+
+Making Something People Want is Hard
+
+Now we come to the fiercest monster of all: the difficulty of making something people want. It's so hard that most startups aren't able to do it. You are trying to figure out something that's never been done before.
+
+Not making something people want is the biggest cause of failure we see early on. (The second biggest is founder disputes.)
+
+In order to make something people want, being brilliant and determined is not enough. You have to be able to talk to your users and adjust your idea accordingly. Ordinarily you have to change your idea quite a lot even if you start out with a reasonably good one.
+
+Remember the first Airbnb website? Airbedandbreakfast was a rather narrower idea when they first launched. They started out as a site that let people rent out airbeds to travelers for conferences. Then they changed to renting out airbeds. Then they changed to renting out a room or a couch, but the host had to be there to make breakfast. Then finally they realized there was pent up demand to rent out entire places.
+
+This evolution shows that you may begin with a general vision of what your startup is doing but you often have to try several different approaches to get it right.
+
+Sometimes you have to totally change your idea. OrderAhead (which lets you order takeout on your cell phone) was the founders' 6th idea.
+
+Even if you don't need to change the overall idea much, you still tend to have to do a lot of refinement. One of the best examples of this is Dropbox.  Drew and Arash were working on something that was obviously necessary, but the reason it was hard to predict early on whether they'd succeed is that there were lots of people doing this.  The way to win in this world was to execute well. It didn't just happen overnight; they had to get 1001 details right. There were a lot of unglamorous schleps between this photo:
+
+and this one:
+
+Rollercoaster
+
+Between starting the company and being on the cover of Forbes, you're going to have some dramatic ups and downs. In a startup, you don't have the damping that you'd have as part of a larger organization.
+Circumstances fling you about. The process is often described as a roller coaster, because you are up one minute and down the next.
+
+Lots of rollercoaster stories involve fundraising. One of the most extreme ones I know happened to some people we funded at their previous startup. It was based in Texas and they got a termsheet from a top tier VC in Silicon Valley. One of the conditions was that they base the company in the Bay Area. So the founders sold their homes and moved their families into corporate housing in Texas until they found new places in the Valley.
+
+The documents were already signed and the money was scheduled to be wired on a friday. They were going to start working on monday out of the VC's office. So friday came and for some reason the money
+didn't get wired. They called VC to ask if they should come out. The VC said,  "Yes. Of course!" They got in their minivan and drove from Texas to Silicon Valley, stopping in Vegas to celebrate (this is the up part of the roller coaster).
+
+On monday, they set up their stuff in conference room of the VC fund—all 6 of the team working there. By that wednesday, the funds still hadn't been wired. They had board meeting planned for that day and invited the VC.
+
+In this meeting, the CEO talked about how signup numbers had gone down temporarily because they changed the way they measured them.
+
+You know how this story will turn out...the VC had actually gotten buyer's remorse and he used this as an excuse to break the deal. Remember, they had signed all the documents, sold their houses, moved to Silicon Valley and were just waiting to get the $7 million wired to them. Instead the VC bails. He kicks them out of the conference room. The founders had to call their wives back in Texas and go back with their tails between legs. They had to lay everyone off. Can you imagine? Just a few days before they were celebrating in Vegas and now they have nothing.
+
+(Incidentally, to get a story this extreme, we had to use an example of a startup we didn't fund. A VC probably wouldn't do this to a startup we had funded.)
+
+Now let me tell you about the other half of the roller coaster:
+
+We funded the Codecademy team in summer of 2011. Their original idea didn't work and they kept exploring new ones. It wasn't until late July that they started working on the idea of teaching people to code online. They launched just 3 days before Demo Day. In those 3 days, they got over 200,000 users.
+
+They only launched so they could get up on Demo Day and say that they were a launched company. They never expected that in just 3 days they could go from a startup with an unlaunched idea to a startup that could get up on stage and announce they had 200,000 users (which is just about the most exciting thing you could say to investors).
+
+The theme here is how extreme things can be. Just remember that no extreme ever lasts.  Don't let yourself get immobilized by sadness when things go wrong.  Just keep putting one foot in front of the other and know it will get better. But don't get complacent when things are going well.  In reality things are never as bad or as
+good as they seem.
+
+What makes the rollercoaster even worse is that while you are on it, there's an audience watching everything you do. You'll have trolls and reporters saying outrageous things about you online. So be ready for this and have a thick skin.
+
+Hard, But Not Impossible
+
+Everyone knows that startups are hard. Yet when we watch people do it they are always surprised.
+
+The reason they are surprised is that they don't realize how bad these specific problems can be. I've seen some very smart and talented people get so demoralized that they just gave up.
+
+Startups are not for the faint of heart. I realize that this is not new news, but I wanted you to at least understand how they're hard early on so that when you run into these specific monsters, you'll know what to do.
+
+Thanks 1000Memories!
+
+4/13/2011
+
+ 
+
+This weekend, I received this beautiful bound book from the 1000Memories founders. It was a gift from them—a collection of all the photos from the memorial page I created for my beloved grandmother, Isabella Livingston.
+
+It’s been almost 20 years since Isabella passed away. Rather than be sad, I remember all the happy moments we shared and try keep her spirit alive. Most importantly, I want my son to understand what a special person she was. She really would have liked him.
+
+So when Y Combinator funded 1000memories last winter, I created a memorial page for my grandmother. I had fun going through the old photos of Isabella and choosing to add ones from my childhood  that elicit special memories. My plan was to write about Isabella so that my son could learn more about her through photos and stories.
+
+Then got sidetracked—probably with YC stuff. But my aunt Ann somehow managed to discover the link and added Isabella’s biography. She shared it with a few family members and my aunt Susan added some wonderful photos. 
+
+Now I have this lovely book that I can read to my 2-year-old at bedtime and share my memories. I'll treasure it. 
+ 
+
+Grubwithus Female Founders Dinners in the Bay Area
+
+1/26/2011
+
+ 
+
+I’d like to encourage more women to start startups, particularly those who, like me at 25, are not sure it’s even an option.
+
+My friends at Grubwithus (YC W11) are going to help me by organizing a series of dinners in the Bay Area next month for women interested in learning more about startups. YC alumni (and I in a few cases) will be at the dinners to meet you and answer your questions. Learn more about the Grubwithus dinners here.
+
+What Stops Female Founders?
+
+1/26/2011
+
+ 
+
+The lack of women in tech startups seems a perennially hot topic. I’m keenly aware of this problem because I see so many founders, and so few of them are women. I’m delighted to have 6 women at YC this winter (including an all-female founding team!) but the overall percentage of female founders we fund has remained constant over the years at about 4%.
+
+We’ve found that the number of females we’ve funded is a reflection of our applicant pool. Anyone with access to the Internet can apply to Y Combinator, but few females do. (1)
+
+Several months ago Mike Arrington wrote an article called “Too Few Women In Tech? Stop Blaming The Men.” He suggested that the lack of women is not due to discrimination but “that not enough women want to become entrepreneurs.” Since our applicant pool seems to bear this out, it seems a likely explanation.
+
+So why don’t women want to start startups? I wonder if it’s not that not enough women want to start startups, but that not enough women even consider it as an option. I was one of them.  I wish now that I’d started a startup in my twenties instead of wasting those years in a series of boring corporate jobs. But the idea never occurred to me.
+
+So I decided to conduct a thought experiment: now that I know more about startups, what advice would I give to myself as a 25-year-old, and how likely would I have been to start a startup even with the benefit of that advice? (2) Some of my thoughts seemed so surprising that I wanted to share them.
+
+(Remember, this is advice I’d give to myself at age 25. My background: I had a B.A. in English, lived in NYC, had a pretty active social life, and had an unrewarding job at a financial communications agency.)
+
+Save money
+
+As strange as it seems, the first bit of advice that sprang to mind was: never be in a position where you’re dependent on a paycheck to survive in the short term. Don’t get into debt, and try to have a nest egg—no matter how small. Though I had a decent salary, I managed to spend more money than I made and got into debt. If my weekly paycheck had suddenly disappeared, I’d have been screwed.
+
+Having savings makes you less dependent on your employer and gives you some flexibility to think about pursuing other things. When you first begin working on a startup, it’s hard to convince investors to give you money. So the longer you can live on your savings, the more time you’ll have to figure out your idea and get users.
+
+Duh. Of course no one should live beyond their means. But I’d never thought about the implications of that when I was 25. I was very shortsighted. Living cheaply enough to save money would have meant giving up all sorts of creature comforts like my one-bedroom apartment on the Upper West Side or festive dinners out with friends. As embarrassed as I am to admit it, downgrading my quality of life would have been a significant barrier to starting a startup. (I have no idea if women generally care more about quality of life than men, but it was certainly true for me.)
+
+Learn more about startups
+
+My next piece of advice would be to understand what being a founder is really like. The media often glamorizes successful founders and makes their paths seem easier than they actually were.
+
+At Y Combinator, we recommend reading all of Paul Graham’s essays about startups and I give each team a copy of Founders at Work at the first dinner. There is so much information about startups online these days.  
+
+Grab coffee with anyone you know who is involved with startups and ask them what it’s like. Ask them to tell you war stories. What was the hardest part about doing a startup? What was it like day-to-day? You may discover that some aspects of founding a startup are not things you want to endure: rejection, the daily emotional roller coaster, a general sense of uncertainty, etc.
+
+Find a co-founder. Someone technical if you aren’t.
+
+Finding a technical cofounder would have been difficult for me. I was an English major and didn’t know any computer programmers.
+
+The best advice here is to get out and network. If someone in your IT department is actually good, befriend them. Ask friends of friends if they know talented programmers. Read Hacker News. Go to meetups or other similar events. This may feel uncomfortable but it won’t be the first uncomfortable thing you have to do if you want to start a startup.
+
+Finding a programmer to work with if you don’t already know one will be a challenge. Merely judging if a programmer is exceptional vs. competent will be very hard if you are not one yourself.  When you do find someone, work together informally for a while to test your compatibility. Cofounders will endure so much together that their relationship is often compared to a marriage. 
+
+Learn to program
+
+I wish I had learned to program when I had the luxury of spare time. Now I’d tell myself: take a class or get a friend to teach you. Even if you aren’t very good, it will make programming seem less foreign and terrifying. It will help you to understand the world in which your cofounder works and should ultimately give you a better vision for the product. Having even a basic grasp of programming will help you fathom what’s possible or not technically, too.
+
+Build your own brand.
+
+LinkedIn’s Reid Hoffman talks about how people are now their own brands. It’s really true. Anyone can blog, become a respected commenter in forums, produce videos, etc. One of the most frustrating professional problems I had in my 20s was not having enough “experience.” I wanted to do x, but no one would hire me even though I was capable because I didn’t have sufficient experience in x on my resume. (This is a problem that starting a startup can solve, by the way.)
+
+So create your own experience! If you think you want to do a startup in a particular area, become an expert on your own. Create a blog on the subject filled with useful advice, tweet insightful comments—do anything that teaches you more about this subject and lends credibility to your own personal brand.
+
+Do a test run
+
+I never thought I’d say this because I believe it takes complete dedication for a startup founder to succeed but, the advice I’d give to myself as a 25-year-old would be to work on a startup on weekends at first. If you aren’t sure whether you should be a founder, test things out for a little while without actually burning your boat. (3)
+
+Founders at Work began as a side project. My job was unchallenging and filled with a lot of bureaucratic crap, so I worked on Founders at Work as an interesting project to help keep my spirits up. Once I got a book contract though, I did decide to quit my job so I could work on the book full-time.
+
+No life
+
+Startups are a huge amount of work. If you have a successful startup, you will most likely need to give up many of the “softer” things in life. You won’t be able to date as much. You won’t take long vacations. In fact you might find yourself working almost every day of the year. Your family and friends will complain that they never see you.
+
+Even if you don’t mean to blow everything off, you will become so consumed with your startup that it will occupy most of your waking thoughts. Andrew Mason of Groupon spoke at YC last summer and told us that he sometimes didn’t feel like he was part of the human race for the past few years. I understood what he meant. Paul Graham always said having a successful startup is like condensing 40 years of working into 4 extremely stressful ones. This deal just isn’t for everyone.
+
+Thick Skin
+
+Founders face all sorts of rejection in the early days. You are suddenly in a world where you get slapped around a lot, so if you take slaps personally it is going to be distracting. People will dismiss your idea, complain about the functionality of what you’ve built, or publicly criticize you.
+
+At Y Combinator, we advise startups to launch early. Launch as soon as you’ve built something with a quantum of utility so that you can start getting feedback from your users. Though we and the founders know there is a much larger vision for the product, launching early often leaves you vulnerable to criticism from trolls and other naysayers. Constructive feedback from users is valuable, but uninformed and nasty remarks should not take up space in your brain.
+
+Lots of founders find the fundraising process totally demoralizing, too. When you have a hard time raising money it’s hard not to start believing yourself that your company is lame. But even successful founders often have to meet with lots of investors before finding the one that agrees to invest.
+
+Even if some types of rejection/criticism are warranted,you’ll find people are more direct about it in the startup world. In a big company, bad news is often couched in euphemisms. In the startup world, people just give it directly. So just be sure that you don’t take rejection personally.
+
+Make something people want
+
+Y Combinator’s motto is “Make something people want.” We believe it is the single most important thing in building a successful startup. As I’ve said before: by nature, startups are very non-discriminatory. As a founder, your success is directly tied to the success of your product. You must please the market. And if the product is actually good, the market will reward you.
+
+We can help.
+
+We’ve tried to make Y Combinator a great option for anyone who wants to start a startup. Twice a year we have open applications for our 3-month funding cycles. Here’s more about what we do in the 3 months, but essentially it’s like first gear for a startup.
+
+We tend to fund technical founders, but we like to take risks on different types of people, because part of our model is to be able to take more risks by making the cost of failure low. The only thing we require is that you come to Silicon Valley for 3 months.
+
+I’d encourage anyone who wants to start a startup to fill out our application. In fact, we designed the application to serve as a valuable exercise in itself. Even if you never hit the submit button, it will help you formulate your thoughts and think strategically about your idea.
+
+Boxed in
+
+So would I have started a startup at 25 if I’d known more about it? To be honest, I’m really not sure I would have. The biggest obstacle would have been the lack of potential co-founders.  I might have started a startup if I’d had the right co-founder, but I just didn’t know the right people when I was 25.
+
+I often regret not having at least worked at a startup, but then I remind myself that it truly never seemed like an option when I was younger. I was 34 when we started Y Combinator and even then the hardest part was telling people about it, because it did not seem like a “normal” thing to do! Lots of people were skeptical, but that’s always true when you do something that hasn’t been done before. Don’t ever let others put an upper bound on your professional aspirations. This can happen without you even realizing it. So you have to make a conscious effort not to get boxed in.
+
+Level Playing Field
+
+It’s been true in the past and probably is still true to some extent that investors discriminate against women. Not necessarily consciously, but their models of the ideal founder are current successful founders, who are mostly men.
+
+But while your ability to reach customers may be limited by the difficulty of getting funding, the customers themselves don’t care. So if you work on something that doesn’t require lots of money to get started, you really do have a level playing field. And fortunately startups require less and less money to start.  
+
+There are so many ideas you can do for cheap that even if investors are skeptical, that’s not going to stop you. What’s more likely to stop you is what would have stopped me: not realizing that a startup founder could have been someone like me, and not knowing any technical cofounders.  But unlike the skepticism of investors these are things that are completely under your control.
+
+ 
+
+Learn to program (for anyone in NYC): http://girldevelopit.com/
+
+(1) We don’t know the exact number of female applicants because we don’t ask people their gender on the application form. But we have a general sense judging from their names.
+
+(2) That was 15 years ago.
+
+(3) But make a decision fairly quickly whether you want to do it full time, since it’s really hard to have a successful startup “on the side.”
+
+Mark Zuckerberg on What Hollywood Doesn't Get About Silicon Valley
+
+10/27/2010
+
+ 
+
+Here's an interview I did with Facebook founder Mark Zuckerberg at Startup School the other weekend. One of the most interesting things to me was his analysis of what The Social Network got wrong. People in Hollywood couldn't imagine that someone would build something because they were interested in building things, so they had to create another, perhaps more "movie-compatible," motivation for him. 
+
+This is is one of the biggest things the rest of the world doesn't understand about hackers. They simply enjoy building things. A lot of successful startups began as things done just for fun or out of curiosity.
+
+Check out the full interview (which includes some questions about Facebook's early days) and all the other talks from Startup School here: http://www.justin.tv/startupschool/videos
+
+A Note About Sabeer Bhatia's Interview
+
+2/23/2009
+
+ 
+
+I received evidence yesterday that some of the things Sabeer Bhatia said in his interview in Founders at Work were false.  The evidence indicates that (a) Tim Draper rather than Jack Smith had the idea of putting a Hotmail ad at the bottom of emails sent by the service, and (b) that DFJ didn't disparage Hotmail to other VCs interested in investing.
+
+Speaking at Startup2Startup
+
+11/19/2008
+
+ 
+
+I'm really looking forward to tomorrow's Startup2Startup dinner.
+Paul is going to do Q&A with Dave McClure and I'm going to talk
+briefly about some of the parallels I noticed between the stories
+in Founders at Work and my experience working with founders at Y Combinator.
+
+Startup2Startup is an unusual event because the audience is almost all startup founders.  I'm hoping it will feel a lot like Startup School. I love that type of audience because they're so engaged.
+
+Dave McClure, who hosts the events, has been around the startup
+world for a long time and knows what's what. The YC alumni who've attended in the past have said great things about Startup2Startup. This is the kind of event that makes Silicon Valley Silicon Valley.
+
+Founders at Work paperback edition is out
+
+9/17/2008
+
+ 
+
+I'm excited to report that the paperback edition of Founders at Work is now available.
+
+I'm enormously grateful to everyone who's recommended the book, whether through blog posts or informal conversations.  It turned out to be Apress' bestseller of 2007, and this wouldn't have happened without all the positive and insightful feedback circulating on the Internet.
+
+Apress wanted to include a new chapter in the paperback edition and suggested someone interview me about the early days of Y Combinator. I got Paul Graham to do it. It felt very strange at first to be on the "other side" of the tape recorder, but it turned out to be a lot of fun.
+
+Here’s an excerpt:
+
+When did you start Y Combinator?
+
+We started Y Combinator in March 2005. Around that same time, I had gotten a book deal for Founders at Work, so I had planned to quit my job doing marketing at an investment bank and work full-time for a little while on the book. But we started Y Combinator simultaneously, so I didn't really get to spend much time on the book.
+
+What was the process when Y Combinator got started?
+
+That would assume that we had a process. There was no process.  Remember, Y Combinator started off as an experiment.  Paul had wanted to do angel investing. He wanted to help people start companies. But he didn't really want all the requirements that come with being an angel investor, so he thought he should start an organization that could handle all of this for him. I said, "That sounds interesting. I'd love to work with entrepreneurs." So we sort of hatched this idea for Y Combinator, and I was the one in charge of doing a lot of the business stuff.
+
+We decided to do a batch of investments at once, so that we could learn how to be investors.  We decided, "OK, we'll invest in a group of startups, and we'll do it over the summer since a lot of people are free over the summertime."
+
+How did the summer turn out?
+
+A lot better than we'd ever thought.  Not that I went into things with a whole lot of expectations. The idea with Y Combinator was that we were going to invest small amounts of money in startups and help them get set up legally, just like Viaweb had been helped out by Paul's friend Julian. Get them set up, work closely with them on their products and then introduce them to investors to hopefully get more funding.
+
+I remember when we first got started, we thought, "How do we even tell people about this?" So Paul built a website—I think he stayed up all night building it. We had a couple pages online that loosely described what we were planning to do—we didn't really fully know what we were planning to do—and we had an application, with about 20 questions on it, and then Paul launched it on paulgraham.com, which had a lot of traffic because of his essays.  We started getting some applications in.  I was still working at the time, and I remember Paul saying, "We have some good applications, you better quit your job."
+
+What was the point when you quit?
+
+If I remember correctly, it was the Monday after we conducted the interviews. We got a lot of applications, more than we thought we would. And then we chose about 20 groups to come to Cambridge to interview—over a Saturday and Sunday, all day long.  On Sunday night we called everyone.
+
+We chose 8 that we had wanted to fund, and all of them but one said yes. I give the founders a lot of credit, because this was a brand new concept and Y Combinator had no track record.  The deal was: move to Cambridge for the summer and get $12,000 or $18,000, depending on whether you were two or three founders. We based the amount of money on the MIT graduate student stipend, which was a couple grand a month. We said, "Come to Cambridge and we'll work with you, and we'll get together for dinner and hear from guest speakers every week." (Unfortunately for Paul, we hijacked his personal office to use for Y Combinator.) So 7 of them said yes, and I went into work on Monday thinking "Y Combinator is real now"—even though we didn't even have Y Combinator legally set up at this point. I gave my notice that day, I think.
+
+But that day something else very memorable happened. There had been one group, two guys from UVA, who were still seniors and were graduating that spring—Alexis Ohanian and Steve Huffman.  They came to us with an idea that we just thought was wrong for two young guys with no connections in the fast food industry.  Their idea was ordering fast food through your cell phone. And we didn't fund them.  We told them, "Sorry, we really liked you guys, but we just think your idea would be a bit too challenging."
+
+But that morning when I was at work, Paul called them and said, "We like you guys.  Would you be willing to work on another idea?" They were on an Amtrak train heading back to Virginia. I remember Paul emailed me and the subject line was "muffins saved." I had nicknamed them "the muffins," because I just loved them.  It was just sort of an affectionate name.
+
+I remember thinking, "This is so exciting." They had gotten off the train in Hartford or something and headed back to Boston to go meet with Paul to brainstorm new ideas. I thought, "These are the kind of people I want to fund—people who would get off the train and go back and make it happen." So we wound up funding 8 companies that summer.
+
+Do you remember anyone else in that first batch?
+
+Looking back, it was amazing group that we had. Sam Altman of Loopt was in that batch. There's actually a funny story about him, too. He had submitted an application and at the time he'd been working with a few other people, but he was the only one who could come to Cambridge that summer. So Sam emailed us saying he was the only one who could come and Paul wrote back to him, saying, "You know, Sam, you're only a freshman. You have plenty of time to start a startup. Why don't you just apply later?"
+
+Sam wrote back something to the effect of, "I'm a sophomore, and I'm coming to the interview."
+
+Summer '05: (l to r) Sam Altman, Alexis Ohanian, Steve Huffman, Justin Kan, Emmett Shear, Paul Graham
+
+Weekly dinner gathering: it's so roomy!
+
+Trevor, Paul and me at a photoshoot (taken in front of YC) for a magazine article that never ran. Photo: Asia Kepka
+
+Robert Morris and Sam Altman
+
+YC's summer update
+
+8/4/2008
+
+ 
+
+We’re less than 2 weeks away from Demo Day and I feel like this funding cycle has whizzed by faster than any other. We have 22 startups this summer, bringing the total number we’ve funded to 102.  There’s a lot going on!
+
+The founders will find the next few weeks to be the most hectic of the summer. As well as preparing for Demo Day, many are also planning to launch. Some have already: Startuply, a site (and widget) for startup job listings; Anyvite, an easy-to-use invitation service that (unlike Evite) also works well on mobiles; Posterous, which lets anyone post anything online just by emailing it; Slinkset, which lets users make their own Reddit-like link site for whatever topic they want; and Awesome Highlighter, which is like a highlighter, but for web pages.
+
+I’d like to publicly thank the amazing speakers we’ve had come talk to everyone so far: Mark Macenka, a partner at Goodwin Procter, explained corporate law 101 in layman’s terms and warned of common legal pitfalls for early stage startups; Hutch Fishman, CFO of many successful startups, covered all the financial stuff founders need to understand; Jonathan Seelig, one of the founders of Akamai, shared insights from both the entrepreneur’s and investor’s perspective; Steve O’Leary, who’d retired a few days before as head of M&A at Jefferies Broadview, talked all about the nuances of the acquisition process; Bill Warner, founder of Avid and Wildfire, gave an extremely candid talk about his early experiences; and last week, Google’s Rich Miner, founder of Android, came to tell everyone about both the Android platform and his experiences as an entrepreneur.  Special thanks to Joel Lehrer from Goodwin Procter, who came and spent the day advising the startups individually about patent and IP issues.
+
+Coming up we have three stars in one week: Joel Spolsky, Mitch Kapor, and Greg McAdoo.
+
+We’ve also been lucky to have a steady stream of YC alumni travel to Boston to visit us and advise the new founders.  As peers they offer a uniquely valuable sort of advice.
+
+Rehearsal Day, the “dress rehearsal” for Demo Day, is now only a few days away.  So now the founders will gradually switch from working 100% of their time on their products to working on presenting as well.  These presentations will be seen by literally hundreds of investors, so it’s worth putting in the effort to make them good.  Fortunately the founders will get several chances to nail the delivery, because we’ve scheduled 3 Demo Days this year to accommodate investor interest.  The first is in Boston, then everyone flies to the Bay Area for two more days of presentations at our Silicon Valley office.  After which we all relax and have a beer.
+
+*Thanks to Posterous' Gary Tan for the fabulous photos!
+
+Rich Miner talks to the group.
+
+Congratulations to Ryan, Julian and Simon!
+
+7/30/2008
+
+ 
+
+PG, Ryan Junee and me.
+
+It was announced today that Google has acquired Omnisio.
+
+Y Combinator funded Omnisio last winter. Like most founders who participate in Y Combinator's 3-month funding cycles, Ryan Junee, Julian Frumar and Simon Ratner built a remarkable product in a very short amount of time. Omnisio addressed a real need: it gives everyone an easy way to annotate online videos.
+
+We put them to the test last April when we used Omnisio to capture and display all the talks from Startup School. They did an amazing job.
+
+I am so delighted for Ryan, Jules and Simon and wish them all the best now that they are part of YouTube's team.
+
+<<Previous
+
+Jessica Livingston
+
+Archives
+
+October 2012
+
+April 2011
+
+January 2011
+
+October 2010
+
+February 2009
+
+November 2008
+
+September 2008
+
+August 2008
+
+July 2008
+
+April 2008
+
+February 2008
+
+January 2008
+
+December 2007
+
+November 2007
+
+October 2007
+
+September 2007
+
+August 2007
+
+July 2007
+
+June 2007
+
+Categories
+
+All
+
+RSS Feed
+
+Founders at Work tm, site (c) 2009 JL
+
+Proudly powered by Weebly. Create a free website.
+
+Home
+
+Interviews
+
+Author
+
+Blog
+
+Y Combinator
